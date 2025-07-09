@@ -1,0 +1,161 @@
+[
+  {
+    "layoutResume": {
+      "version": "5.2.2",
+      "usedStockCount": "1",
+      "layoutCount": "1",
+      "elapsedTime": "0.0234684",
+      "material": "103057//TAB MELAM BLANCO BIO 15MM 2.15X2.50MTS//15.00//V",
+      "sawWidth": "4.4",
+      "lTrim": "10",
+      "rTrim": "10",
+      "tTrim": "10",
+      "bTrim": "10",
+      "maxBooks": "5",
+      "thickness": "15",
+      "ptxData": null,
+      "dxfData": null
+    },
+    "layout": [
+      {
+        "stockCount": "1",
+        "material": "103057//TAB MELAM BLANCO BIO 15MM 2.15X2.50MTS//15.00//V",
+        "sheetH": "1830",
+        "sheetW": "2440",
+        "partCount": "2",
+        "stockNo": "0",
+        "rootStockNo": "0",
+        "fillRatio": "0.30905670518677775",
+        "stockCuts": "4",
+        "part": [
+          {
+            "stockNo": "0",
+            "part": "0",
+            "x": "10",
+            "y": "10",
+            "length": "600",
+            "width": "1500",
+            "rotated": "False",
+            "datos": "1|D|D|G|G||P-39- 13-**- 70- 70-L1. 2||L|"
+          },
+          {
+            "stockNo": "0",
+            "part": "1",
+            "x": "10",
+            "y": "614.4",
+            "length": "400",
+            "width": "1200",
+            "rotated": "False",
+            "datos": "2||||||||L|"
+          }
+        ],
+        "wastePart": [
+          {
+            "stockNo": "0",
+            "part": "0",
+            "x": "1514.4",
+            "y": "10",
+            "length": "600",
+            "width": "915.6",
+            "rotated": null
+          },
+          {
+            "stockNo": "0",
+            "part": "1",
+            "x": "1214.4",
+            "y": "614.4",
+            "length": "400",
+            "width": "1215.6",
+            "rotated": null
+          },
+          {
+            "stockNo": "0",
+            "part": "2",
+            "x": "10",
+            "y": "1018.8",
+            "length": "801.2",
+            "width": "2420",
+            "rotated": null
+          }
+        ],
+        "cutsTrims": [
+          {
+            "stockNo": "0",
+            "iCut": "0",
+            "x1": "0",
+            "y1": "7.8",
+            "x2": "2440",
+            "y2": "7.8",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "1",
+            "x1": "0",
+            "y1": "1822.2",
+            "x2": "2440",
+            "y2": "1822.2",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "7.8",
+            "y1": "7.8",
+            "x2": "7.8",
+            "y2": "1822.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "2432.2",
+            "y1": "7.8",
+            "x2": "2432.2",
+            "y2": "1822.2",
+            "aLevel": "1"
+          }
+        ],
+        "cuts": [
+          {
+            "stockNo": "0",
+            "iCut": "0",
+            "x1": "7.8",
+            "y1": "612.2",
+            "x2": "2432.2",
+            "y2": "612.2",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "1",
+            "x1": "7.8",
+            "y1": "1016.6",
+            "x2": "2432.2",
+            "y2": "1016.6",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "1512.2",
+            "y1": "7.8",
+            "x2": "1512.2",
+            "y2": "612.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "1212.2",
+            "y1": "612.2",
+            "x2": "1212.2",
+            "y2": "1016.6",
+            "aLevel": "1"
+          }
+        ]
+      }
+    ],
+    "error": null
+  }
+]

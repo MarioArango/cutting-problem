@@ -1,0 +1,17 @@
+[project]
+name = "cutting-problem"
+version = "0.1"
+description = "Algoritmos de saneamiento y ordenamiento"
+authors = [
+    {name = "Mario",email = "mario.arango@amazontic.pe"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib (>=3.10.3,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
