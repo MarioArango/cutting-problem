@@ -221,12 +221,12 @@ def generate_cut_sequential(level1, level2, level3, level4, level5, level6):
         cut['iCut'] = i
 
 
-def process_sanitation_cuts(cutting, width, height, trim, saw_width):
+def process_sanitation_cuts(cuts, parts, width, height, trim, saw_width):
     """
     Procesa los datos de corte y sanea los cortes faltantes
 
     Args:
-        cutting: Json de diccionario con datos del tablero
+        cuts: Json de diccionario con datos del tablero
         saw_width: Ancho de la sierra
         trim: Margen de recorte
         width: Ancho del tablero
@@ -249,7 +249,7 @@ def process_sanitation_cuts(cutting, width, height, trim, saw_width):
         "length": float(part["length"]),
         "width": float(part["width"]),
         "rotated": False if part["rotated"] == 'False' else True
-        } for part in cutting['part']
+        } for part in parts
     ]
     
     cuts = [ {
@@ -260,7 +260,7 @@ def process_sanitation_cuts(cutting, width, height, trim, saw_width):
         "x2": float(cut["x2"]),
         "y2": float(cut["y2"]),
         "aLevel": int(cut["aLevel"]) + 1
-        } for cut in cutting['cuts']
+        } for cut in cuts
     ]
 
     # print(cuts)
