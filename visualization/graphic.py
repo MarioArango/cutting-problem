@@ -25,13 +25,13 @@ def draw_cut_lines(ax, cuts, scale=1.0, saw_width=4.4):
 
     recursive_draw(cuts)
 
-def visualize_cutting_plan(data, plano_index=0, scale=0.3):
+def visualize_cutting_plan(data, saw_width, plano_index=0, scale=0.3):
     plano = data[0]['layout'][plano_index]
     parts = plano['parts']
     cuts = plano.get('cuts', [])
     width = float(plano['sheetW']) * scale
     height = float(plano['sheetH']) * scale
-    saw_width = float(data[0]['layoutResume']['sawWidth'])
+    saw_width = float(data[0]['layoutResume']['sawWidth']) if float(data[0]['layoutResume']['sawWidth'])  is not None else saw_width
 
     # Paleta fija
     custom_colors = [

@@ -44,7 +44,7 @@
                         "nLargo": 1600.0,
                         "nAnchoTerm": 400.0,
                         "nLargoTerm": 1600.0,
-                        "nCantidad": "1\\/3",
+                        "nCantidad": "1/3",
                         "bServicioEsp": false,
                         "nPlano": 0,
                         "sVeta": "L",
@@ -68,7 +68,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 700.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "1\\/3",
+                        "nCantidad": "1/3",
                         "sCantoA1": "",
                         "bA1": "",
                         "sCantoL1": "D01",
@@ -99,7 +99,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 700.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "2\\/3",
+                        "nCantidad": "2/3",
                         "sCantoA1": "",
                         "bA1": "",
                         "sCantoL1": "D01",
@@ -123,7 +123,7 @@
                         "y": "10",
                         "length": "400",
                         "width": "815.6",
-                        "rotated": false
+                        "rotated": null
                     },
                     {
                         "stockNo": "0",
@@ -132,7 +132,7 @@
                         "y": "414.4",
                         "length": "1404.4",
                         "width": "915.6",
-                        "rotated": false
+                        "rotated": null
                     }
                 ],
                 "cutsTrims": [
@@ -258,7 +258,7 @@
                         "nLargo": 1600.0,
                         "nAnchoTerm": 400.0,
                         "nLargoTerm": 1600.0,
-                        "nCantidad": "1\\/3",
+                        "nCantidad": "1/3",
                         "bServicioEsp": false,
                         "nPlano": 0,
                         "sVeta": "L",
@@ -282,7 +282,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 700.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "1\\/3",
+                        "nCantidad": "1/3",
                         "sCantoA1": "",
                         "bA1": "",
                         "sCantoL1": "D01",
@@ -313,7 +313,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 700.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "2\\/3",
+                        "nCantidad": "2/3",
                         "sCantoA1": "",
                         "bA1": "",
                         "sCantoL1": "D01",
@@ -357,7 +357,7 @@
                         "nLargo": 1600.0,
                         "nAnchoTerm": 400.0,
                         "nLargoTerm": 1600.0,
-                        "nCantidad": "2\\/3",
+                        "nCantidad": "2/3",
                         "bServicioEsp": false,
                         "nPlano": 1,
                         "sVeta": "L",
@@ -381,7 +381,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 700.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "3\\/3",
+                        "nCantidad": "3/3",
                         "sCantoA1": "",
                         "bA1": "",
                         "sCantoL1": "D01",
@@ -412,7 +412,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 699.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "1\\/2",
+                        "nCantidad": "1/2",
                         "sCantoL1": "D01",
                         "sDescL1": "Canto Blanco 0.4x22",
                         "bL1": "D01",
@@ -435,7 +435,7 @@
                         "y": "10",
                         "length": "400",
                         "width": "815.6",
-                        "rotated": false
+                        "rotated": null
                     },
                     {
                         "stockNo": "0",
@@ -444,7 +444,7 @@
                         "y": "414.4",
                         "length": "1404.4",
                         "width": "915.6",
-                        "rotated": false
+                        "rotated": null
                     }
                 ],
                 "cutsTrims": [
@@ -570,7 +570,7 @@
                         "nLargo": 1600.0,
                         "nAnchoTerm": 400.0,
                         "nLargoTerm": 1600.0,
-                        "nCantidad": "2\\/3",
+                        "nCantidad": "2/3",
                         "bServicioEsp": false,
                         "nPlano": 1,
                         "sVeta": "L",
@@ -594,7 +594,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 700.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "3\\/3",
+                        "nCantidad": "3/3",
                         "sCantoA1": "",
                         "bA1": "",
                         "sCantoL1": "D01",
@@ -625,7 +625,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 699.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "1\\/2",
+                        "nCantidad": "1/2",
                         "sCantoL1": "D01",
                         "sDescL1": "Canto Blanco 0.4x22",
                         "bL1": "D01",
@@ -668,7 +668,7 @@
                         "nLargo": 1600.0,
                         "nAnchoTerm": 400.0,
                         "nLargoTerm": 1600.0,
-                        "nCantidad": "3\\/3",
+                        "nCantidad": "3/3",
                         "bServicioEsp": false,
                         "nPlano": 2,
                         "sVeta": "L",
@@ -692,7 +692,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 699.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "2\\/2",
+                        "nCantidad": "2/2",
                         "sCantoL1": "D01",
                         "sDescL1": "Canto Blanco 0.4x22",
                         "bL1": "D01",
@@ -722,7 +722,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 699.0,
                         "nLargoTerm": 1498.0,
-                        "nCantidad": "1\\/1",
+                        "nCantidad": "1/1",
                         "sCantoA1": "G01",
                         "sDescA1": "Canto Blanco 2x22",
                         "bA1": "G01",
@@ -748,7 +748,7 @@
                         "y": "10",
                         "length": "400",
                         "width": "815.6",
-                        "rotated": false
+                        "rotated": null
                     },
                     {
                         "stockNo": "0",
@@ -757,7 +757,7 @@
                         "y": "414.4",
                         "length": "1404.4",
                         "width": "915.6",
-                        "rotated": false
+                        "rotated": null
                     }
                 ],
                 "cutsTrims": [
@@ -883,7 +883,7 @@
                         "nLargo": 1600.0,
                         "nAnchoTerm": 400.0,
                         "nLargoTerm": 1600.0,
-                        "nCantidad": "3\\/3",
+                        "nCantidad": "3/3",
                         "bServicioEsp": false,
                         "nPlano": 2,
                         "sVeta": "L",
@@ -907,7 +907,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 699.0,
                         "nLargoTerm": 1500.0,
-                        "nCantidad": "2\\/2",
+                        "nCantidad": "2/2",
                         "sCantoL1": "D01",
                         "sDescL1": "Canto Blanco 0.4x22",
                         "bL1": "D01",
@@ -937,7 +937,7 @@
                         "nLargo": 1500.0,
                         "nAnchoTerm": 699.0,
                         "nLargoTerm": 1498.0,
-                        "nCantidad": "1\\/1",
+                        "nCantidad": "1/1",
                         "sCantoA1": "G01",
                         "sDescA1": "Canto Blanco 2x22",
                         "bA1": "G01",
