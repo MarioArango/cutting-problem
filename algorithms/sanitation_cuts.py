@@ -156,24 +156,48 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
     '''
     ## LEVEL 1 CREADO, PORQUE ESTE GENERA UNA PIEZA DIRECTAMENTE
     for part in parts:
-        
-        #FALTA EL CASO ESPECIAL PARA EL NIVEL 1, CUANDO ES SOLO UNA TIRA, se debe crear un corte level2 derecho para que haga el refilado
-        
+        part_width = part['width'] if part['rotated'] is False else part['length']
         part_length = part['length'] if part['rotated'] is False else part['width']
         
-        if round(part['y'] + part_length + saw_width/2, 2) == round(y2, 2):
-            new_index, new_icut = get_new_index(level1, level1[len(level1) - 1])
-            level1.insert(new_index, {
+        if round(part['x'] + part_width + saw_width/2, 2) == round(x2, 2) and round(part['y'] + part_length + saw_width/2, 2) == round(y2, 2):
+            cutLvl1 = [ cutLvl1 for cutLvl1 in level1 if cutLvl1['y2'] == round(part['y'] + part_length + saw_width/2, 2) ]
+
+            if len(cutLvl1) == 0:
+                #Caso donde la tira esta al final del eje Y, debe crear unn corte nivel 1
+                new_index, new_icut = get_new_index(level1, level1[len(level1) - 1])
+                level1.insert(new_index, {
+                    "stockNo": "",
+                    "iCut": new_icut,
+                    "x1": x1,
+                    "y1": y2,
+                    "x2": x2,
+                    "y2": y2,
+                    "aLevel": 1
+                })
+                update_icut(new_index, level1 + level2 + level3 + level4 + level5 + level6)
+                
+            #Esta o no al final, la tira necesita un Corte nivel 2 creado en el lado derecho de la tira para el refilado
+            cutLvl1_father_upper = [cutLvl1 for cutLvl1 in level1 if cutLvl1['y2'] == round(part['y'] - saw_width/2, 2)]
+            lastCutsLvl2 = None
+            if len(cutLvl1_father_upper) == 1:
+                cutLvl1_upper = cutLvl1_father_upper[0]
+                cutsLvl2_upper = [cutLvl2 for cutLvl2 in level2 if cutLvl2['y2'] == cutLvl1_upper['y2']]
+                cutsLvl2_upper = sorted(cutsLvl2_upper, key=lambda cutLvl2: cutLvl2['x2'], reversed=True)
+                lastCutsLvl2 = cutsLvl2_upper[0]
+            
+            new_index, new_icut = 0, 1 if lastCutsLvl2 is None else get_new_index(level2, lastCutsLvl2)
+            
+            level2.insert(new_index, {
                 "stockNo": "",
                 "iCut": new_icut,
-                "x1": x1,
-                "y1": y2,
+                "x1": x2,
+                "y1": round(part['y'] - saw_width/2, 2),
                 "x2": x2,
-                "y2": y2,
-                "aLevel": 1
+                "y2": round(part['y'] + part_length + saw_width/2, 2),
+                "aLevel": 2
             })
-            update_icut(new_index, level1 + level2 + level3 + level4 + level5 + level6)
-        
+            update_icut(new_index, level2 + level3 + level4 + level5 + level6)
+            
     # LEVEL 2 CREADO, PORQUE ESTE GENERA UNA PIEZA DIRECTAMENTE
     for part in parts:
         part_width = part['width'] if part['rotated'] is False else part['length']
@@ -186,9 +210,9 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
             
             if len(lastCutsLvl2):
                 new_index, new_icut = get_new_index(level2, lastCutsLvl2[0])
-                level2.append({
+                level2.insert(new_index, {
                     "stockNo": "",
-                    "iCut": "",
+                    "iCut": new_icut,
                     "x1": x2,
                     "y1": round(part['y'] - saw_width/2, 2),
                     "x2": x2,
