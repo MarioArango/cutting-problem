@@ -6,7 +6,7 @@ from .piece_by_cut import add_piece_by_cut
 
 __all__ = [
     "process_sanitation_cuts",
-    "build_nested_structure", 
+    "build_nested_structure",
     "sort_level1_by_strip_height",
     "sort_level2_by_strip_width",
     "add_piece_by_cut"

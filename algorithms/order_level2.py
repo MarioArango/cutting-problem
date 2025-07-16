@@ -42,14 +42,14 @@ def recalculate_all_coordinates(level2_sorted, parts, trim, saw_width):
         cut2['x2'] = new_x2
         
         if cut2['nItem'] != 0: #ACA SOLO ACTUALIZARA LA PRIMERA PIEZA, SI HAY PIEZAS IGUALES EN EL MISMO TABLERO, ESTAS TIENEN DISTINTAS CORRDENADAS E IGUAL NUMERO DE ITEM, debe validarse tambien por antigua coordenada
-          part = next((part for part in parts if part['nItem'] == cut2['nItem'] and round(part['x'] + part['width'] + saw_width/2, 2) == round(old_x2, 2)), None)
+          part = next((part for part in parts if part['nItem'] == cut2['nItem'] and round(part['x'] + (part['width'] if part['rotated'] is False else part['length'])+ saw_width/2, 2) == round(old_x2, 2)), None)
           part_width = part['width'] if part['rotated'] is False else part['length']
           part['x'] = round(new_x2 - part_width - saw_width/2, 2)
         
         # Actualizar todos los cortes anidados con la fórmula completa
         update_nested_coordinates_recursive(cut2, cut2, parts, accumulated_widths, trim, saw_width)
         
-        accumulated_heights += cut2['width']
+        accumulated_widths += cut2['width']
         
 def update_nested_coordinates_recursive(cut_dict, cut_dict_nivel2, parts, accumulated_widths, trim, saw_width):
     """
@@ -73,7 +73,7 @@ def update_nested_coordinates_recursive(cut_dict, cut_dict_nivel2, parts, accumu
                 if cut['nItem'] != 0:
                   part = next((part for part in parts 
                                if part['nItem'] == cut['nItem']
-                               and (round(part['x'] + part['width'] + saw_width/2, 2) if level_key == 'level4' or level_key == 'level6' else round(part['y'] + part['length'] + saw_width/2, 2)) == round(old_x2 if level_key == 'level4' or level_key == 'level6' else cut['y2'], 2)
+                               and (round(part['x'] + (part['width'] if part['rotated'] is False else part['length']) + saw_width/2, 2) if level_key == 'level4' or level_key == 'level6' else round(part['y'] + (part['length'] if part['rotated'] is False else part['width']) + saw_width/2, 2)) == round(old_x2 if level_key == 'level4' or level_key == 'level6' else cut['y2'], 2)
                               ), None)
                   part_width = part['width'] if part['rotated'] is False else part['length']
                   part['x'] = round(new_x2 - part_width - saw_width/2, 2)
@@ -91,7 +91,7 @@ def get_max_level_inner(cutLvl2):
             
     
 
-def compare_cuts_lvl2(currentCut, nextCut, reverse_order):
+def compare_cuts_lvl2(reverse_order, currentCut, nextCut):
     """Función de comparación personalizada"""
     
     # Cortes nivel 2 consecutivos que sacan pieza
@@ -132,13 +132,14 @@ def sort_level2_by_strip_width(nested_structure, parts, trim, saw_width, order='
         Ordena nivel 2 por ancho de tiras horizontles y recalcula todas las coordenadas (tira igual partes en la horizontal)
     """
     # 1. Calcular ancho real de cada tira usando orden original
-    for cutLvl1 in enumerate(nested_structure):
+    for cutLvl1 in nested_structure:
         if(cutLvl1['level2']):
-            for i, cut in cutLvl1['level2']:
+            cutsLvl2 = cutLvl1['level2']
+            for i, cut in enumerate(cutsLvl2):
                 if i == 0:
                     previous_x2 = round(trim - saw_width/2, 2)  # Primera tira no tiene precedente, pero si una coord inicio
                 else:
-                    previous_x2 = nested_structure[i-1]['x2']  # x1 de la tira anterior
+                    previous_x2 = cutsLvl2[i-1]['x2']  # x1 de la tira anterior
                 
                 cut['previous_x2'] = previous_x2
                 cut['width'] = round(cut['x2'] - previous_x2, 2) #width bruto = width_pieza + sawWidth_extremos_horizontales
@@ -147,7 +148,7 @@ def sort_level2_by_strip_width(nested_structure, parts, trim, saw_width, order='
             reverse_order = order.lower() == 'desc'
             
             comparator = partial(compare_cuts_lvl2, reverse_order)
-            level2_sorted = sorted(cutLvl1['level2'], key=cmp_to_key(comparator))
+            level2_sorted = sorted(cutsLvl2, key=cmp_to_key(comparator))
 
             # 3. Recalcular todas las coordenadas de los cortes y piezas
             recalculate_all_coordinates(level2_sorted, parts, trim, saw_width)
@@ -156,6 +157,6 @@ def sort_level2_by_strip_width(nested_structure, parts, trim, saw_width, order='
         
             update_icuts(level2_sorted, current_level=2, index=0)
             
-            cutLvl1['level2'] = level2_sorted
+            cutsLvl2 = level2_sorted
 
     return nested_structure

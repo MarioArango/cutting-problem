@@ -1,3 +1,6 @@
+
+#uCiut anterior no funciona porque no esta anidado, debemos traer todos los cortes previos identicos y obtener el de layor x o y segun nivel
+
 def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim, saw_width):
     """
     Si el corte saca pieza, setea el identificador de la pieza en el corte.
@@ -21,17 +24,10 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
         if(not has_internal_cuts and height_strip != 0):
             #Buscar la parte correspondiente al corte  
             for part in parts:
-                if part['rotated'] == True:
-                    if (
-                        round(height_strip, 2) == round(part['width'], 2)
-                        and round(part['y'] + part['width'] + saw_width/2, 2) == round(cutLvl1['y2'], 2)
-                        and round(cutLvl1['x1'] + saw_width/2, 2)== round(part['x'], 2)
-                    ):
-                        part_index = part['nItem']
-                else:
-                    if (
-                        round(height_strip, 2) == round(part['length'], 2) 
-                        and round(part['y'] + part['length'] + saw_width/2, 2) == round(cutLvl1['y2'], 2)
+                part_length = part['length'] if part['rotated'] is False else part['width']
+                if (
+                        round(height_strip, 2) == round(part_length, 2) 
+                        and round(part['y'] + part_length + saw_width/2, 2) == round(cutLvl1['y2'], 2)
                         and round(cutLvl1['x1'] + saw_width/2, 2) == round(part['x'], 2)
                     ):
                         part_index = part['nItem']
@@ -64,21 +60,14 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
         if not has_internal_cuts:
             #Buscar la parte correspondiente al corte 
             for part in parts:
-                if part['rotated'] == True:
-                    if (
-                        round(width_strip, 2) == round(part['length'], 2)
-                        and round(part['x'] + part['length'] + saw_width/2) == round(cutLvl2['x2'])
+                part_width = part['width'] if part['rotated'] is False else part['length']
+                if (
+                        round(width_strip, 2) == round(part_width, 2)
+                        and round(part['x'] + part_width + saw_width/2, 2) == round(cutLvl2['x2'], 2)
                         and round(cutLvl2['y1'] + saw_width/2, 2) == round(part['y'], 2)
                     ):
                         part_index = part['nItem']
-                else:
-                    if (
-                        round(width_strip, 2) == round(part['width'], 2)
-                        and round(part['x'] + part['width'] + saw_width/2, 2) == round(cutLvl2['x2'], 2)
-                        and round(cutLvl2['y1'] + saw_width/2, 2) == round(part['y'], 2)
-                    ):
-                        part_index = part['nItem']
-        
+                        
         cutLvl2['nItem'] = part_index
         
     #NIVEL 3
@@ -111,17 +100,10 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
         part_index = 0
         if not has_internal_cuts:
             for part in parts:
-                if part['rotated'] == True:
-                    if (
-                        round(height_strip, 2) == round(part['width'], 2)
-                        and round(part['y'] + part['width'] + saw_width/2, 2) == round(cutLvl3['y2'], 2) 
-                        and round(cutLvl3['x1'] + saw_width/2, 2) == round(part['x'], 2)
-                    ):
-                        part_index = part['nItem']
-                else:
-                    if (
-                        round(height_strip, 2) == round(part['length'], 2)
-                        and round(part['y'] + part['length'] + saw_width/2, 2) == round(cutLvl3['y2'], 2)
+                part_length = part['length'] if part['rotated'] is False else part['width']
+                if (
+                        round(height_strip, 2) == round(part_length, 2)
+                        and round(part['y'] + part_length+ saw_width/2, 2) == round(cutLvl3['y2'], 2)
                         and round(cutLvl3['x1'] + saw_width/2, 2) == round(part['x'], 2)
                     ):
                         part_index = part['nItem']
@@ -164,7 +146,7 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
              ),
             None
         ) if cut_level2_father is not None and cut_level3_father is not None else None
-
+            
         # Buscar corte previo (hermano anterior) en nivel 4
         prev_cut_level4 = next(
             (
@@ -176,6 +158,12 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
             ),
             None
         )
+        
+        if(cutLvl4['x1'] == 2424.8 and cutLvl4['y1'] == 2.8):
+            print('prev_cut_level2_father', prev_cut_level2_father)
+            print('cut_level2_father', cut_level2_father)
+            print('cut_level3_father', cut_level3_father)
+            print('prev_cut_level4', prev_cut_level4)
 
         if prev_cut_level4 is not None:
             width_strip = cutLvl4['x2'] - prev_cut_level4['x2'] - saw_width
@@ -185,6 +173,10 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
             else:
                 width_strip = cutLvl4['x2'] - saw_width/2 - trim
 
+        
+        if(cutLvl4['x1'] == 2424.8 and cutLvl4['y1'] == 2.8):
+            print('width_strip', width_strip)
+            
         # Verificar si tiene cortes internos (nivel 5), o sea, no saca pieza aún
         has_internal_cuts = any(
             cutLvl5['x2'] == cutLvl4['x2']
@@ -196,21 +188,14 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
         part_index = 0
         if not has_internal_cuts:
             for part in parts:
-                if part['rotated'] == True:
-                    if (
-                        round(width_strip, 2) == round(part['length'], 2)
-                        and round(part['x'] + part['length'] + saw_width/2, 2) == round(cutLvl4['x2'], 2)
+                part_width = part['width'] if part['rotated'] is False else part['length']
+                if (
+                        round(width_strip, 2) == round(part_width, 2)
+                        and round(part['x'] + part_width + saw_width/2, 2) == round(cutLvl4['x2'], 2)
                         and round(cutLvl4['y1'] + saw_width/2, 2) == round(part['y'], 2)
                     ):
                         part_index = part['nItem']
-                else:
-                    if (
-                        round(width_strip, 2) == round(part['width'], 2)
-                        and round(part['x'] + part['width'] + saw_width/2, 2) == round(cutLvl4['x2'], 2)
-                        and round(cutLvl4['y1'] + saw_width/2, 2) == round(part['y'], 2)
-                    ):
-                        part_index = part['nItem']
-
+                        
         cutLvl4['nItem'] = part_index
 
     # NIVEL 5
@@ -312,17 +297,10 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
         part_index = 0
         if not has_internal_cuts:
             for part in parts:
-                if part['rotated'] == True:
-                    if (
-                        round(height_strip, 2) == round(part['width'], 2)
-                        and round(part['y'] + part['width'] + saw_width/2, 2) == round(cutLvl5['y2'], 2)
-                        and round(cutLvl5['x1'] + saw_width/2, 2) == round(part['x'], 2)
-                    ):
-                        part_index = part['nItem']
-                else:
-                    if (
-                        round(height_strip, 2) == round(part['length'], 2)
-                        and round(part['y'] + part['length'] + saw_width/2, 2) == round(cutLvl5['y2'], 2)
+                part_length = part['length'] if part['rotated'] is False else part['width']
+                if (
+                        round(height_strip, 2) == round(part_length, 2)
+                        and round(part['y'] + part_length + saw_width/2, 2) == round(cutLvl5['y2'], 2)
                         and round(cutLvl5['x1'] + saw_width/2, 2) == round(part['x'], 2)
                     ):
                         part_index = part['nItem']
@@ -426,17 +404,10 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
         # En nivel 6 ya no hay más cortes internos, así que piezas finales
         part_index = 0
         for part in parts:
-            if part['rotated'] == True:
-                if (
-                    round(width_strip, 2) == round(part['length'], 2)
-                    and round(part['x'] + part['length'] + saw_width/2, 2) == round(cutLvl6['x2'], 2)
-                    and round(cutLvl6['y1'] + saw_width/2, 2) == round(part['y'], 2)
-                ):
-                    part_index = part['nItem']
-            else:
-                if (
-                    round(width_strip, 2) == round(part['width'], 2)
-                    and round(part['x'] + part['width'] + saw_width/2, 2) == round(cutLvl6['x2'], 2)
+            part_width = part['width'] if part['rotated'] is False else part['length']
+            if (
+                    round(width_strip, 2) == round(part_width, 2)
+                    and round(part['x'] + part_width + saw_width/2, 2) == round(cutLvl6['x2'], 2)
                     and round(cutLvl6['y1'] + saw_width/2, 2) == round(part['y'], 2)
                 ):
                     part_index = part['nItem']

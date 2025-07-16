@@ -26,14 +26,7 @@ def draw_cut_lines(ax, cuts, scale=1.0, saw_width=4.4):
     recursive_draw(cuts)
 
 def visualize_cutting_plan(data, saw_width, plano_index=0, scale=0.3):
-    plano = data[0]['layout'][plano_index]
-    parts = plano['parts']
-    cuts = plano.get('cuts', [])
-    width = float(plano['sheetW']) * scale
-    height = float(plano['sheetH']) * scale
-    saw_width = float(data[0]['layoutResume']['sawWidth']) if float(data[0]['layoutResume']['sawWidth'])  is not None else saw_width
-
-    # Paleta fija
+    # Paleta de colores fija
     custom_colors = [
         '#d1ffd6', '#ffc759', '#e8ffc7', '#ffdb52', '#ebffb5', '#ffd67a', '#ffc7a8', '#ffedbd',
         '#cfffe6', '#ffba91', '#e0ff96', '#ffdec2', '#fff08c', '#d7ffd7', '#edffe6', '#fde2cd',
@@ -42,38 +35,48 @@ def visualize_cutting_plan(data, saw_width, plano_index=0, scale=0.3):
         '#ded6f8', '#fdd1fd', '#fcf0e4', '#d9edf6', '#d787af', '#d787d7', '#d7af5f', '#d7af87',
         '#d7afaf', '#d7d787', '#d7d7ff', '#d7ffff', '#ffe870', '#ffd7af', '#ffd7ff', '#ffff87', '#ffffd7'
     ]
-    unique_nitems = sorted(set(p['nItem'] for p in parts))
-    color_by_nitem = {n: custom_colors[i % len(custom_colors)] for i, n in enumerate(unique_nitems)}
 
-    fig, ax = plt.subplots(figsize=(12, 8))
-    ax.set_xlim(0, width)
-    ax.set_ylim(height, 0)
-    ax.set_aspect('equal')
-    ax.set_title(f"Plano {plano_index + 1} - Material: {plano['material']}", fontsize=10)
+    for group in data:  # Recorre cada material/color
+        planos = group['layout']
+        saw_width_local = float(group['layoutResume']['sawWidth']) if group['layoutResume']['sawWidth'] is not None else saw_width
 
-    ax.add_patch(patches.Rectangle((0, 0), width, height, fill=False, edgecolor='black', linewidth=1))
+        for plano_index, plano in enumerate(planos):
+            parts = plano['part']
+            cuts = plano.get('cuts', [])
+            width = float(plano['sheetW']) * scale
+            height = float(plano['sheetH']) * scale
 
-    for part in parts:
-        x = float(part['x']) * scale
-        y = float(part['y']) * scale
-        w = float(part['width']) * scale
-        h = float(part['length']) * scale
-        nItem = part['nItem']
-        color = color_by_nitem[nItem]
+            unique_nitems = sorted(set(p['nItem'] for p in parts))
+            color_by_nitem = {n: custom_colors[i % len(custom_colors)] for i, n in enumerate(unique_nitems)}
 
-        ax.add_patch(patches.Rectangle((x, y), w, h, linewidth=0.5, edgecolor='black', facecolor=color))
-        ax.text(x + w / 2, y + h / 2, f"{nItem}", ha='center', va='center', fontsize=10, weight='bold')
-        ax.text(x + 2, y + 10, f"{int(h / scale)} x {int(w / scale)}", ha='left', va='top', fontsize=6)
+            fig, ax = plt.subplots(figsize=(12, 8))
+            ax.set_xlim(0, width)
+            ax.set_ylim(height, 0)
+            ax.set_aspect('equal')
+            ax.set_title(f"Plano {plano_index + 1} - Material: {plano['material']}", fontsize=10)
 
-    draw_cut_lines(ax, cuts, scale=scale, saw_width=saw_width)
+            ax.add_patch(patches.Rectangle((0, 0), width, height, fill=False, edgecolor='black', linewidth=1))
 
-    ax.axis('off')
+            for part in parts:
+                x = float(part['x']) * scale
+                y = float(part['y']) * scale
+                w = float(part['width']) * scale
+                h = float(part['length']) * scale
+                nItem = part['nItem']
+                color = color_by_nitem[nItem]
 
-    ax.text(
-        width / 2, -10,
-        f"{int(width / scale)} mm x {int(height / scale)} mm",
-        ha='center', va='top', fontsize=9, weight='bold'
-    )
+                ax.add_patch(patches.Rectangle((x, y), w, h, linewidth=0.5, edgecolor='black', facecolor=color))
+                ax.text(x + w / 2, y + h / 2, f"{nItem}", ha='center', va='center', fontsize=10, weight='bold')
+                ax.text(x + 2, y + 10, f"{int(h / scale)} x {int(w / scale)}", ha='left', va='top', fontsize=6)
 
-    plt.tight_layout()
-    plt.show()
+            draw_cut_lines(ax, cuts, scale=scale, saw_width=saw_width_local)
+
+            ax.axis('off')
+            ax.text(
+                width / 2, -10,
+                f"{int(width / scale)} mm x {int(height / scale)} mm",
+                ha='center', va='top', fontsize=9, weight='bold'
+            )
+
+            plt.tight_layout()
+            plt.show()

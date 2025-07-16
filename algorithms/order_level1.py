@@ -71,7 +71,7 @@ def update_nested_coordinates_recursive(cut_dict, cut_dict_nivel1, parts, accumu
                 if cut['nItem'] != 0:
                   part = next((part for part in parts 
                                if part['nItem'] == cut['nItem']
-                               and (round(part['y'] + part['length'] + saw_width/2, 2) if level_key == 'level3' or level_key == 'level5' else round(part['x'] + part['width'] + saw_width/2, 2)) == round(old_y2 if level_key == 'level3' or level_key == 'level5' else cut['x2'], 2)
+                               and (round(part['y'] + (part['length'] if part['rotated'] is False else part['width']) + saw_width/2, 2) if level_key == 'level3' or level_key == 'level5' else round(part['x'] + (part['width'] if part['rotated'] is False else part['length']) + saw_width/2, 2)) == round(old_y2 if level_key == 'level3' or level_key == 'level5' else cut['x2'], 2)
                               ), None)
                   part_height = part['length'] if part['rotated'] is False else part['width']
                   part['y'] = round(new_y2 - part_height - saw_width/2, 2)
