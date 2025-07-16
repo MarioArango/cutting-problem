@@ -28,7 +28,7 @@ def generate_cuts_ordered(result_optimization, trim, saw_width):
             
             # 2. Agregar pieza por corte
             level1, level2, level3, level4, level5, level6 = add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim, saw_width)
-            # print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
+            print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
 
             # 3. Crear estructura anidada
             nested_structure = build_nested_structure(level1, level2, level3, level4, level5, level6)
