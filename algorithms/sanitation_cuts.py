@@ -36,8 +36,11 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
             ##puede haber un caso donde un lvl2 previo no exista y se deba saber el lvl1 actual para tener el y2, es poco probable porque el optimizador lo consideraria lvl1
     for cutLvl3 in level3:
         if float(cutLvl3['x2']) == x2: 
-            lastCutLvl2 = next((cutLvl2 for cutLvl2 in level2 if cutLvl2["x1"] == cutLvl3["x1"] and cutLvl2['y1'] <= cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2']), None)
-            if lastCutLvl2 is not None:
+            lastCutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2["x1"] == cutLvl3["x1"] and cutLvl2['y1'] <= cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2']]
+            if len(lastCutsLvl2):
+                lastCutsLvl2 = sorted(lastCutsLvl2, key=lambda cut: cut['x2'], reverse=True)
+                lastCutLvl2 = lastCutsLvl2[0]
+                    
                 new_index, new_icut = get_new_index(level2, lastCutLvl2)
                 level2.insert(new_index, {
                     "stockNo": "",
@@ -56,8 +59,11 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
     for cutLvl4 in level4:
         for cutLvl1 in level1:
             if cutLvl4['y2'] == cutLvl1["y2"]: 
-                lastCutLvl3 = next((cutLvl3 for cutLvl3 in level3 if cutLvl3["y1"] == cutLvl4["y1"] and cutLvl3['x1'] <= cutLvl4['x1'] and cutLvl3['x2'] >= cutLvl4['x2']), None)
-                if lastCutLvl3 is not None:
+                lastCutsLvl3 = [cutLvl3 for cutLvl3 in level3 if cutLvl3["y1"] == cutLvl4["y1"] and cutLvl3['x1'] <= cutLvl4['x1'] and cutLvl3['x2'] >= cutLvl4['x2']]
+                if len(lastCutsLvl3):
+                    lastCutsLvl3 = sorted(lastCutsLvl3, key=lambda cut: cut['y2'], reverse=True)
+                    lastCutLvl3 = lastCutsLvl3[0]
+                    
                     new_index, new_icut = get_new_index(level3, lastCutLvl3)
                     level3.insert(new_index, {
                         "stockNo": "",
@@ -75,8 +81,11 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
     for cutLvl5 in level5:
         for cutLvl2 in level2:
             if cutLvl5['x2'] == cutLvl2["x2"]: 
-                lastCutLvl4 = next((cutLvl4 for cutLvl4 in level4 if cutLvl4["x1"] == cutLvl5["x1"] and cutLvl4['y1'] <= cutLvl5['y1'] and cutLvl4['y2'] >= cutLvl5['y2']), None)
-                if lastCutLvl4 is not None:
+                lastCutsLvl4 = [cutLvl4 for cutLvl4 in level4 if cutLvl4["x1"] == cutLvl5["x1"] and cutLvl4['y1'] <= cutLvl5['y1'] and cutLvl4['y2'] >= cutLvl5['y2']]
+                if len(lastCutsLvl4):
+                    lastCutsLvl4 = sorted(lastCutsLvl4, key=lambda cut: cut['x2'], reverse=True)
+                    lastCutLvl4 = lastCutsLvl4[0]
+                    
                     new_index, new_icut = get_new_index(level4, lastCutLvl4)
                     level4.insert(new_index, {
                         "stockNo": "",
@@ -94,8 +103,11 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
     for cutLvl6 in level6:
         for cutLvl3 in level3:
             if cutLvl6['y2'] == cutLvl3["y2"]: 
-                lastCutLvl5 = next((cutLvl5 for cutLvl5 in level5 if cutLvl5["y1"] == cutLvl6["y1"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']), None)
-                if lastCutLvl5 is not None:
+                lastCutsLvl5 = [cutLvl5 for cutLvl5 in level5 if cutLvl5["y1"] == cutLvl6["y1"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']]
+                if len(lastCutsLvl5):
+                    lastCutsLvl5 = sorted(lastCutsLvl5, key=lambda cut: cut['y2'], reverse=True)
+                    lastCutLvl5 = lastCutsLvl5[0]
+                    
                     new_index, new_icut = get_new_index(level5, lastCutLvl5)
                     level5.insert(new_index, {
                         "stockNo": "",
@@ -114,8 +126,11 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
     for cutLvl6 in level6:
         for cutLvl5 in level5:
             if cutLvl6['y2'] == cutLvl5["y2"]: 
-                lastCutLvl6 = next((cutLvl6 for cutLvl6 in level6 if cutLvl6["y2"] == cutLvl5["y2"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']), None)
-                if lastCutLvl6 is not None:
+                lastCutsLvl6 = [cutLvl6 for cutLvl6 in level6 if cutLvl6["y2"] == cutLvl5["y2"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']]
+                if len(lastCutsLvl6):
+                    lastCutsLvl6 = sorted(lastCutsLvl6, key=lambda cut: cut['x2'], reverse=True)
+                    lastCutLvl6 = lastCutsLvl6[0]
+                    
                     new_index, new_icut = get_new_index(level6, lastCutLvl6)
                     level6.insert(new_index, {
                         "stockNo": "",
@@ -127,6 +142,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                         "aLevel": 6
                     })
                     update_icut(new_index, level6)
+
 
 def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, parts, saw_width, x1, x2, y1, y2):
     '''
@@ -156,9 +172,10 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                 
         if round(part['x'] + part_width + saw_width/2, 2) == round(x2, 2):
             cutLvl1_father = next((cutLvl1 for cutLvl1 in level1 if cutLvl1['y2'] == round(part['y'] + part_length + saw_width/2)), None)
-            cutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2['y2'] == cutLvl1_father['y2']]
-            lastCutLvl2 = cutsLvl2[len(cutsLvl2) - 1]
-            new_index, new_icut = get_new_index(level2, lastCutLvl2)
+            lastCutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2['y2'] == cutLvl1_father['y2']]
+            lastCutsLvl2= sorted(lastCutsLvl2, key=lambda cut: cut['x2'], reverse=True)
+            
+            new_index, new_icut = get_new_index(level2, lastCutsLvl2[0])
             level2.append({
                 "stockNo": "",
                 "iCut": "",
@@ -178,8 +195,10 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
             #garantiza que el corte que genera la pieza no es nivel 2, sino que es nivel 3 y falta crear
             exist_cutLvl3_prev = any(cutLvl3 for cutLvl3 in level3 if cutLvl3['x2'] == cutLvl2['x2'] and cutLvl3['y1'] > cutLvl2['y1'] and cutLvl3['y2'] < cutLvl2['y2'] and round(cutLvl3['x2'], 2) == round(part['x'] + part_width + saw_width/2, 2))
             if round(part['y'] + part_length + saw_width/2, 2) == round(cutLvl2['y2'], 2) and exist_cutLvl3_prev:
-                lastCutLvl3 = next((cutLvl3 for cutLvl3 in level3 if cutLvl3['x2'] == cutLvl2['x2'] and cutLvl3['y1'] > cutLvl2['y1'] and cutLvl3['y2'] < cutLvl2['y2'] and round(cutLvl3['x2'], 2) == round(part['x'] + part_width + saw_width/2, 2)), None)
-                new_index, new_icut = get_new_index(level3, lastCutLvl3)
+                lastCutsLvl3 = next((cutLvl3 for cutLvl3 in level3 if cutLvl3['x2'] == cutLvl2['x2'] and cutLvl3['y1'] > cutLvl2['y1'] and cutLvl3['y2'] < cutLvl2['y2'] and round(cutLvl3['x2'], 2) == round(part['x'] + part_width + saw_width/2, 2)), None)
+                lastCutsLvl3 = sorted(lastCutsLvl3, key=lambda cut: cut['y2'], reverse=True)
+                
+                new_index, new_icut = get_new_index(level3, lastCutsLvl3[0])
                 level3.insert(new_index, {
                     "stockNo": "",
                     "iCut": new_icut,
@@ -200,10 +219,10 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
             exist_cutLvl4_prev = any(cutLvl4 for cutLvl4 in level4 if cutLvl4['y2'] == cutLvl3['y2'] and cutLvl4['x2'] > cutLvl3['x1'] and cutLvl4['x2'] < cutLvl3['x2'] and round(cutLvl4['y2'], 2) == round(part['y'] + part_length + saw_width/2 , 2))
             
             if round(part['x'] + part_width + saw_width/2, 2) == round(cutLvl3['x2'], 2) and exist_cutLvl4_prev:
-                lastCutLvl4 = next((cutLvl4 for cutLvl4 in level4 if cutLvl4['y2'] == cutLvl3['y2'] and cutLvl4['x2'] > cutLvl3['x1'] and cutLvl4['x2'] < cutLvl3['x2'] and round(cutLvl4['y2'], 2) == round(part['y'] + part_length + saw_width/2 , 2)), None)
-                #FALTA OBTENER EL ULTIMO, ACA SOLO VERIFICAMOS QUE EXISTE, TAL VEZ ORDENAR POR MAYOR X2 o Y1 segun nivel
-                print(f'lastCutLvl4: {lastCutLvl4}')
-                new_index, new_icut = get_new_index(level4, lastCutLvl4)
+                lastCutsLvl4 = [cutLvl4 for cutLvl4 in level4 if cutLvl4['y2'] == cutLvl3['y2'] and cutLvl4['x2'] > cutLvl3['x1'] and cutLvl4['x2'] < cutLvl3['x2'] and round(cutLvl4['y2'], 2) == round(part['y'] + part_length + saw_width/2 , 2)]
+                lastCutsLvl4 = sorted(lastCutsLvl4, key=lambda cut: cut['x2'], reverse=True)
+
+                new_index, new_icut = get_new_index(level4, lastCutsLvl4[0])
                 level4.insert(new_index, {
                     "stockNo": "",
                     "iCut": new_icut,
@@ -224,8 +243,10 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
             exist_cutLvl5_prev = any(cutLvl5 for cutLvl5 in level5 if cutLvl5['x2'] == cutLvl4['x2'] and cutLvl5['y1'] > cutLvl4['y1'] and cutLvl5['y2'] < cutLvl4['y2'] and round(cutLvl5['x2'], 2) == round(part['x'] + part_width + saw_width/2, 2))
             
             if round(part['y'] + part_length + saw_width/2, 2) == round(cutLvl4['y2'], 2) and exist_cutLvl5_prev:
-                lastCutLvl5 = next((cutLvl5 for cutLvl5 in level5 if cutLvl5['x2'] == cutLvl4['x2'] and cutLvl5['y1'] > cutLvl4['y1'] and cutLvl5['y2'] < cutLvl4['y2'] and round(cutLvl5['x2'], 2) == round(part['x'] + part_width + saw_width/2, 2)), None)
-                new_index, new_icut = get_new_index(level5, lastCutLvl5)
+                lastCutsLvl5 = next((cutLvl5 for cutLvl5 in level5 if cutLvl5['x2'] == cutLvl4['x2'] and cutLvl5['y1'] > cutLvl4['y1'] and cutLvl5['y2'] < cutLvl4['y2'] and round(cutLvl5['x2'], 2) == round(part['x'] + part_width + saw_width/2, 2)), None)
+                lastCutsLvl5 = sorted(lastCutsLvl5, key=lambda cut: cut['y2'], reverse=True)
+                
+                new_index, new_icut = get_new_index(level5, lastCutsLvl5[0])
                 level5.insert(new_index, {
                     "stockNo": "",
                     "iCut": new_icut,
@@ -246,8 +267,10 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
             exist_cutLvl6_prev = any(cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['x2'], 2) == round(part['y'] + part_length + saw_width/2 , 2))
             
             if round(part['x'] + part_width + saw_width/2, 2) == round(cutLvl5['x2'], 2) and exist_cutLvl6_prev:
-                lastCutLvl6 = next((cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['x2'], 2) == round(part['y'] + part_length + saw_width/2 , 2)), None)
-                new_index, new_icut = get_new_index(level6, lastCutLvl6)
+                lastCutsLvl6 = next((cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['x2'], 2) == round(part['y'] + part_length + saw_width/2 , 2)), None)
+                lastCutsLvl6 = sorted(lastCutsLvl6, key=lambda cut: cut['x2'], reverse=True)
+                
+                new_index, new_icut = get_new_index(level6, lastCutsLvl6[0])
                 level6.insert(new_index, {
                     "stockNo": "",
                     "iCut": new_icut,
