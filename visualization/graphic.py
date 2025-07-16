@@ -60,8 +60,8 @@ def visualize_cutting_plan(data, saw_width, plano_index=0, scale=0.3):
             for part in parts:
                 x = float(part['x']) * scale
                 y = float(part['y']) * scale
-                w = float(part['width']) * scale
-                h = float(part['length']) * scale
+                w = (float(part['width']) if part['rotated']  is False else float(part['length']))* scale 
+                h = (float(part['length']) if part['rotated']  is False else float(part['width'])) * scale
                 nItem = part['nItem']
                 color = color_by_nitem[nItem]
 
