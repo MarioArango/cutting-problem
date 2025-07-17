@@ -28,20 +28,20 @@ def generate_cuts_ordered(result_optimization, trim, saw_width):
             
             # 2. Agregar pieza por corte
             level1, level2, level3, level4, level5, level6 = add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim, saw_width)
-            print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
+            # print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
 
             # 3. Crear estructura anidada
             nested_structure = build_nested_structure(level1, level2, level3, level4, level5, level6)
 
             # 4. Ordenar y recalcular coordenadas en nivel 1
-            # sorted_structure_level1 = sort_level1_by_strip_height(nested_structure, parts, trim, saw_width, 'asc')
+            sorted_structure_level1, parts = sort_level1_by_strip_height(nested_structure, parts, trim, saw_width, 'asc')
 
             # 5. Ordenar y recalcular coordenadas en nivel 2
-            # sorted_structure_level2 = sort_level2_by_strip_width(sorted_structure_level1, parts, trim, saw_width, 'asc')
+            sorted_structure_level2, parts = sort_level2_by_strip_width(sorted_structure_level1, parts, trim, saw_width, 'asc')
             
             healthy_boards.append({
                 **board,
-                'cuts': nested_structure,
+                'cuts': sorted_structure_level2,
                 'part': parts
             })
         
@@ -58,8 +58,8 @@ if __name__ == "__main__":
     saw_width = 4.4
     
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_apilado.json') # N:2318 - id:2690
-    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order1.json') #N:2288 - id:2659
-    result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order2.json') #N:2277 - id:2648
+    result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order1.json') #N:2288 - id:2659
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order2.json') #N:2277 - id:2648
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba3.json')
     
     with open(result_optimization_path, 'r') as json_file:
