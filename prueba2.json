@@ -1,0 +1,188 @@
+[
+  {
+    "layoutResume": {
+      "version": "5.0.3",
+      "usedStockCount": "1",
+      "layoutCount": "1",
+      "elapsedTime": "0.0233041",
+      "material": "103057//TAB MELAM BLANCO BIO 15MM 2.15X2.50MTS//15.00//V",
+      "sawWidth": "4.4",
+      "lTrim": "5",
+      "rTrim": "5",
+      "tTrim": "5",
+      "bTrim": "5",
+      "maxBooks": "0",
+      "thickness": "18",
+      "ptxData": null,
+      "dxfData": null
+    },
+    "layout": [
+      {
+        "stockCount": "1",
+        "material": "103057//TAB MELAM BLANCO BIO 15MM 2.15X2.50MTS//15.00//V",
+        "sheetH": "1830",
+        "sheetW": "2440",
+        "partCount": "2",
+        "stockNo": "0",
+        "fillRatio": "0.18812147272238647",
+        "stockCuts": "4",
+        "part": [
+          {
+            "stockNo": "0",
+            "part": "0",
+            "x": "5",
+            "y": "5",
+            "length": "900",
+            "width": "600",
+            "rotated": "False",
+            "datos": "2||||||||L|",
+            "nIdPza": 387985,
+            "bCortado": false,
+            "nItem": 2,
+            "nAncho": 900.0,
+            "nLargo": 600.0,
+            "nAnchoTerm": 900.0,
+            "nLargoTerm": 600.0,
+            "nCantidad": "1/1",
+            "bServicioEsp": false,
+            "nPlano": 0,
+            "sVeta": "L",
+            "bEngrosado": false,
+            "sEngrosado": "",
+            "sChaflan": ""
+          },
+          {
+            "stockNo": "0",
+            "part": "1",
+            "x": "609.4",
+            "y": "5",
+            "length": "600",
+            "width": "500",
+            "rotated": "False",
+            "datos": "1||||||||L|",
+            "nIdPza": 387986,
+            "bCortado": false,
+            "nItem": 1,
+            "nAncho": 600.0,
+            "nLargo": 500.0,
+            "nAnchoTerm": 600.0,
+            "nLargoTerm": 500.0,
+            "nCantidad": "1/1",
+            "bServicioEsp": false,
+            "nPlano": 0,
+            "sVeta": "L",
+            "bEngrosado": false,
+            "sEngrosado": "",
+            "sChaflan": ""
+          }
+        ],
+        "wastePart": [
+          {
+            "stockNo": "0",
+            "part": "0",
+            "x": "1113.8",
+            "y": "5",
+            "length": "900",
+            "width": "1321.2",
+            "rotated": null
+          },
+          {
+            "stockNo": "0",
+            "part": "1",
+            "x": "609.4",
+            "y": "609.4",
+            "length": "295.6",
+            "width": "500",
+            "rotated": null
+          },
+          {
+            "stockNo": "0",
+            "part": "2",
+            "x": "5",
+            "y": "909.4",
+            "length": "915.6",
+            "width": "2430",
+            "rotated": null
+          }
+        ],
+        "cutsTrims": [
+          {
+            "stockNo": "0",
+            "iCut": "0",
+            "x1": "0",
+            "y1": "2.8",
+            "x2": "2440",
+            "y2": "2.8",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "1",
+            "x1": "0",
+            "y1": "1827.2",
+            "x2": "2440",
+            "y2": "1827.2",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "2.8",
+            "y1": "2.8",
+            "x2": "2.8",
+            "y2": "1827.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "2437.2",
+            "y1": "2.8",
+            "x2": "2437.2",
+            "y2": "1827.2",
+            "aLevel": "1"
+          }
+        ],
+        "cuts": [
+          {
+            "stockNo": "0",
+            "iCut": "0",
+            "x1": "2.8",
+            "y1": "907.2",
+            "x2": "2437.2",
+            "y2": "907.2",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "1",
+            "x1": "607.2",
+            "y1": "2.8",
+            "x2": "607.2",
+            "y2": "907.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "1111.6",
+            "y1": "2.8",
+            "x2": "1111.6",
+            "y2": "907.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "607.2",
+            "y1": "607.2",
+            "x2": "1111.6",
+            "y2": "607.2",
+            "aLevel": "2"
+          }
+        ]
+      }
+    ],
+    "error": null
+  }
+]

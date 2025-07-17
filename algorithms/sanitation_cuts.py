@@ -40,11 +40,9 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
             lastCutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2["x1"] == cutLvl3["x1"] and cutLvl2['y1'] <= cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2']]
             if len(lastCutsLvl2):
                 lastCutsLvl2 = sorted(lastCutsLvl2, key=lambda cut: cut['x2'], reverse=True)
-                
-                if len(lastCutsLvl2):
-                    lastCutLvl2 = lastCutsLvl2[0]
-                    new_index, new_icut = get_new_index(level2, lastCutLvl2)
-                    level2.insert(new_index, {
+                lastCutLvl2 = lastCutsLvl2[0]
+                new_index, new_icut = get_new_index(level2, lastCutLvl2)
+                level2.insert(new_index, {
                         "stockNo": "",
                         "iCut": new_icut,
                         "x1": x2,
@@ -54,7 +52,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                         "aLevel": 2,
                         "comment": "cut created"
                     })
-                    update_icut(new_index, level2 + level3 + level4 + level5 + level6)
+                update_icut(new_index, level2 + level3 + level4 + level5 + level6)
                 
             
     # LEVEL 3 CREADO, CASO DONDE EL NIVEL 3 ESTA EN EXTREMO DEL ALTO DE LA TIRA DONDE SE ENCUENTRA, CONINCIDIENTO CON EL NIVEL 1 PREVIO, Y HAY NIVELES INTERNOS LEVEL 4
@@ -65,11 +63,9 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                 lastCutsLvl3 = [cutLvl3 for cutLvl3 in level3 if cutLvl3["y1"] == cutLvl4["y1"] and cutLvl3['x1'] <= cutLvl4['x1'] and cutLvl3['x2'] >= cutLvl4['x2']]
                 if len(lastCutsLvl3):
                     lastCutsLvl3 = sorted(lastCutsLvl3, key=lambda cut: cut['y2'], reverse=True)
-                    
-                    if len(lastCutsLvl3):
-                        lastCutLvl3 = lastCutsLvl3[0]
-                        new_index, new_icut = get_new_index(level3, lastCutLvl3)
-                        level3.insert(new_index, {
+                    lastCutLvl3 = lastCutsLvl3[0]
+                    new_index, new_icut = get_new_index(level3, lastCutLvl3)
+                    level3.insert(new_index, {
                             "stockNo": "",
                             "iCut": new_icut,
                             "x1": lastCutLvl3['x1'],
@@ -78,8 +74,8 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                             "y2": cutLvl4['y2'],
                             "aLevel": 3,
                             "comment": "cut created"
-                        })
-                        update_icut(new_index, level3 + level4 + level5 + level6)
+                    })
+                    update_icut(new_index, level3 + level4 + level5 + level6)
 
     # LEVEL 4 CREADO, CASO DONDE EL NIVEL 4 ESTA EN EXTREMO DEL ANCHO, CONINCIDIENTO CON EL NIVEL 2 PREVIO,  Y HAY NIVELES INTERNOS LEVEL 5
             ##puede haber un caso donde un lvl4 previo no exista y se deba saber el lvl2 previo para tener el y1, es poco probable porque el optimizador lo consideraria lvl3
@@ -89,11 +85,9 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                 lastCutsLvl4 = [cutLvl4 for cutLvl4 in level4 if cutLvl4["x1"] == cutLvl5["x1"] and cutLvl4['y1'] <= cutLvl5['y1'] and cutLvl4['y2'] >= cutLvl5['y2']]
                 if len(lastCutsLvl4):
                     lastCutsLvl4 = sorted(lastCutsLvl4, key=lambda cut: cut['x2'], reverse=True)
-                    
-                    if len(lastCutsLvl4):
-                        lastCutLvl4 = lastCutsLvl4[0]
-                        new_index, new_icut = get_new_index(level4, lastCutLvl4)
-                        level4.insert(new_index, {
+                    lastCutLvl4 = lastCutsLvl4[0]
+                    new_index, new_icut = get_new_index(level4, lastCutLvl4)
+                    level4.insert(new_index, {
                             "stockNo": "",
                             "iCut": new_icut,
                             "x1": cutLvl5['x2'],
@@ -103,7 +97,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                             "aLevel": 4,
                             "comment": "cut created"
                         })
-                        update_icut(new_index, level4 + level5 + level6)
+                    update_icut(new_index, level4 + level5 + level6)
 
     # LEVEL 5 CREADO, CASO DONDE EL NIVEL 5 ESTA EN EXTREMO DEL ALTO, CONINCIDIENTO CON EL NIVEL 3 PREVIO,  Y HAY NIVELES INTERNOS LEVEL 6
             ##puede haber un caso donde un lvl5 previo no exista y se deba saber el lvl3 previo para tener el x1 y x2, es poco probable porque el optimizador lo consideraria lvl3
@@ -113,11 +107,10 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                 lastCutsLvl5 = [cutLvl5 for cutLvl5 in level5 if cutLvl5["y1"] == cutLvl6["y1"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']]
                 if len(lastCutsLvl5):
                     lastCutsLvl5 = sorted(lastCutsLvl5, key=lambda cut: cut['y2'], reverse=True)
-                    
-                    if len(lastCutsLvl5):
-                        lastCutLvl5 = lastCutsLvl5[0]
-                        new_index, new_icut = get_new_index(level5, lastCutLvl5)
-                        level5.insert(new_index, {
+                    lastCutLvl5 = lastCutsLvl5[0]
+                    new_index, new_icut = get_new_index(level5, lastCutLvl5)
+                    print('ENTRO')
+                    level5.insert(new_index, {
                             "stockNo": "",
                             "iCut": new_icut,
                             "x1": lastCutLvl5['x1'],
@@ -127,32 +120,28 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                             "aLevel": 5,
                             "comment": "cut created"
                         })
-                        update_icut(new_index, level5 + level6)
+                    update_icut(new_index, level5 + level6)
 
-    #REVISARRRRRRRR
     # LEVEL 6 CREADO, CASO DONDE EL NIVEL 6 ESTA EN EXTREMO DE LA HORIZONTAL, CONINCIDIENTO CON EL NIVEL 4 PREVIO
             ##puede haber un caso donde un lvl5 previo no exista y se deba saber el lvl3 previo para tener el y1, es poco probable porque el optimizador lo consideraria lvl3
-    for cutLvl6 in level6:
-        for cutLvl5 in level5:
-            if cutLvl6['y2'] == cutLvl5["y2"]: 
-                lastCutsLvl6 = [cutLvl6 for cutLvl6 in level6 if cutLvl6["y2"] == cutLvl5["y2"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']]
-                if len(lastCutsLvl6):
-                    lastCutsLvl6 = sorted(lastCutsLvl6, key=lambda cut: cut['x2'], reverse=True)
-                    
-                    if len(lastCutsLvl6):
-                        lastCutLvl6 = lastCutsLvl6[0]
-                        new_index, new_icut = get_new_index(level6, lastCutLvl6)
-                        level6.insert(new_index, {
-                            "stockNo": "",
-                            "iCut": new_icut,
-                            "x1": cutLvl5['x2'],
-                            "y1": lastCutLvl6['y1'],
-                            "x2": cutLvl5['x2'],
-                            "y2": lastCutLvl6['y2'],
-                            "aLevel": 6,
-                            "comment": "cut created"
-                        })
-                        update_icut(new_index, level6)
+    # for cutLvl5 in level5:
+    #     lastCutsLvl6 = [cutLvl6 for cutLvl6 in level6 if cutLvl6["y2"] == cutLvl5["y2"] and cutLvl5['x1'] <= cutLvl6['x1'] and cutLvl5['x2'] >= cutLvl6['x2']]
+    #     if len(lastCutsLvl6):
+    #         print('entro 2')
+    #         lastCutsLvl6 = sorted(lastCutsLvl6, key=lambda cut: cut['x2'], reverse=True)
+    #         lastCutLvl6 = lastCutsLvl6[0]
+    #         new_index, new_icut = get_new_index(level6, lastCutLvl6)
+    #         level6.insert(new_index, {
+    #                 "stockNo": "",
+    #                 "iCut": new_icut,
+    #                 "x1": cutLvl5['x2'],
+    #                 "y1": lastCutLvl6['y1'],
+    #                 "x2": cutLvl5['x2'],
+    #                 "y2": lastCutLvl6['y2'],
+    #                 "aLevel": 6,
+    #                 "comment": "cut created"
+    #             })
+    #         update_icut(new_index, level6)
 
 
 def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, parts, saw_width, x1, x2, y1, y2):

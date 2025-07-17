@@ -1,0 +1,151 @@
+[
+  {
+    "layoutResume": {
+      "version": "5.0.3",
+      "usedStockCount": "1",
+      "layoutCount": "1",
+      "elapsedTime": "0.0328098",
+      "material": "103057//TAB MELAM BLANCO BIO 15MM 2.15X2.50MTS//15.00//V",
+      "sawWidth": "4.4",
+      "lTrim": "5",
+      "rTrim": "5",
+      "tTrim": "5",
+      "bTrim": "5",
+      "maxBooks": "0",
+      "thickness": "18",
+      "ptxData": null,
+      "dxfData": null
+    },
+    "layout": [
+      {
+        "stockCount": "1",
+        "material": "103057//TAB MELAM BLANCO BIO 15MM 2.15X2.50MTS//15.00//V",
+        "sheetH": "1830",
+        "sheetW": "2440",
+        "partCount": "1",
+        "stockNo": "0",
+        "fillRatio": "0.20155872077398548",
+        "stockCuts": "2",
+        "part": [
+          {
+            "stockNo": "0",
+            "part": "0",
+            "x": "5",
+            "y": "5",
+            "length": "600",
+            "width": "1500",
+            "rotated": "False",
+            "datos": "1|D|D|G|G||P-39- 13-**- 70- 70-L1. 2||L|",
+            "nIdPza": 370296,
+            "bCortado": false,
+            "nItem": 1,
+            "nAncho": 600.0,
+            "nLargo": 1500.0,
+            "nAnchoTerm": 599.0,
+            "nLargoTerm": 1495.5,
+            "nCantidad": "1/1",
+            "sCantoA1": "G01",
+            "sDescA1": "Canto Blanco 2x22",
+            "bA1": "G01",
+            "sCantoA2": "G02",
+            "sDescA2": "Canto Blanco 3x22",
+            "bA2": "G02",
+            "sCantoL1": "D01",
+            "sDescL1": "Canto Blanco 0.4x22",
+            "bL1": "D01",
+            "sCantoL2": "D02",
+            "sDescL2": "Canto Blanco 1x22",
+            "bL2": "D02",
+            "sPerforacion": "P-39-13-123-70-70-L1",
+            "sPerforacionTec": "P-2-L1",
+            "bServicioEsp": false,
+            "nPlano": 0,
+            "sVeta": "L",
+            "bEngrosado": false,
+            "sEngrosado": "",
+            "sChaflan": ""
+          }
+        ],
+        "wastePart": [
+          {
+            "stockNo": "0",
+            "part": "0",
+            "x": "1509.4",
+            "y": "5",
+            "length": "600",
+            "width": "925.6",
+            "rotated": null
+          },
+          {
+            "stockNo": "0",
+            "part": "1",
+            "x": "5",
+            "y": "609.4",
+            "length": "1215.6",
+            "width": "2430",
+            "rotated": null
+          }
+        ],
+        "cutsTrims": [
+          {
+            "stockNo": "0",
+            "iCut": "0",
+            "x1": "0",
+            "y1": "2.8",
+            "x2": "2440",
+            "y2": "2.8",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "1",
+            "x1": "0",
+            "y1": "1827.2",
+            "x2": "2440",
+            "y2": "1827.2",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "2.8",
+            "y1": "2.8",
+            "x2": "2.8",
+            "y2": "1827.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "2437.2",
+            "y1": "2.8",
+            "x2": "2437.2",
+            "y2": "1827.2",
+            "aLevel": "1"
+          }
+        ],
+        "cuts": [
+          {
+            "stockNo": "0",
+            "iCut": "0",
+            "x1": "2.8",
+            "y1": "607.2",
+            "x2": "2437.2",
+            "y2": "607.2",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "1",
+            "x1": "1507.2",
+            "y1": "2.8",
+            "x2": "1507.2",
+            "y2": "607.2",
+            "aLevel": "1"
+          }
+        ]
+      }
+    ],
+    "error": null
+  }
+]
