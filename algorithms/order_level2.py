@@ -79,20 +79,16 @@ def update_nested_coordinates_recursive(cut_dict, cut_dict_nivel2, parts, accumu
                 cut['x2'] = new_x2
                 
                 if cut['nItem'] != 0:
-                  part = next((part for part in parts 
-                               if part['nItem'] == cut['nItem']
-                               and (round(part['x'] + (part['width'] if part['rotated'] is False else part['length']) + saw_width/2, 2) 
-                                    if level_key == 'level4' or level_key == 'level6' 
-                                    else round(part['y'] + (part['length'] if part['rotated'] is False else part['width']) + saw_width/2, 2)) 
-                               == round(old_x2 if level_key == 'level4' or level_key == 'level6' else cut['y2'], 2)
-                               and (round(part['y'] + (part['length'] if part['rotated'] is False else part['width']) + saw_width/2, 2) 
-                                    if level_key == 'level3' or level_key == 'level5' 
-                                    else round(part['x'] + (part['width'] if part['rotated'] is False else part['length']) + saw_width/2, 2)) 
-                               == round(cut['y2'] if level_key == 'level3' or level_key == 'level5' else old_x2, 2)
-                              ), None)
-                  if part:
-                    part_width = part['width'] if part['rotated'] is False else part['length']
-                    part['x'] = round(new_x2 - part_width - saw_width/2, 2)
+                    for part in parts:
+                        part_width = part['width'] if part['rotated'] is False else part['length']
+                        part_length = part['length'] if part['rotated'] is False else part['width']
+                        
+                        part_x2 = round(part['x'] + part_width + saw_width/2, 2)
+                        part_y2 = round(part['y'] + part_length + saw_width/2, 2)
+                        
+                        if part['nItem'] == cut['nItem'] and part_x2 == round(old_x2, 2) and part_y2 == round(cut['y2'], 2):
+                            part['x'] = round(new_x2 - part_width - saw_width/2, 2)
+                     
                 
                 # Recursión para niveles más profundos
                 update_nested_coordinates_recursive(cut, cut_dict_nivel2, parts, accumulated_widths, trim, saw_width)  
