@@ -24,7 +24,7 @@ def generate_cuts_ordered(result_optimization, trim, saw_width):
             # Uso:
             # 1. Crear estructura cortes saneados
             level1, level2, level3, level4, level5, level6, parts = process_sanitation_cuts(cuts, parts, width, height, trim, saw_width)
-            print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
+            # print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
             
             # 2. Agregar pieza por corte
             level1, level2, level3, level4, level5, level6 = add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim, saw_width)
@@ -32,11 +32,10 @@ def generate_cuts_ordered(result_optimization, trim, saw_width):
 
             # 3. Crear estructura anidada
             nested_structure = build_nested_structure(level1, level2, level3, level4, level5, level6)
-            # print(nested_structure)
             
             # 4. Ordenar y recalcular coordenadas en nivel 1
             sorted_structure_level1, parts = sort_level1_by_strip_height(nested_structure, parts, trim, saw_width, 'asc')
-
+            # print(sorted_structure_level1)
             # 5. Ordenar y recalcular coordenadas en nivel 2
             sorted_structure_level2, parts = sort_level2_by_strip_width(sorted_structure_level1, parts, trim, saw_width, 'asc')
             
@@ -65,7 +64,11 @@ if __name__ == "__main__":
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba2.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba3.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba4.json')
-    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba6.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba7.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8.json')
+    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
     
     with open(result_optimization_path, 'r') as json_file:
         result_optimization = json.load(json_file)
