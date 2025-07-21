@@ -5,19 +5,36 @@ import matplotlib.lines as mlines
 def draw_cut_lines(ax, cuts, scale=1.0, saw_width=4.4):
     offset = (saw_width / 2) * scale
 
-    def draw_single_cut(x1, y1, x2, y2):
-        ax.plot([x1, x2], [y1, y2], linestyle='--', color='black', linewidth=0.5)
+    def draw_single_cut(x1, y1, x2, y2, is_retal=False):
+        base_color = 'blue' if is_retal else 'black'
+        aux_color = 'blue' if is_retal else 'gray'
+
+        ax.plot([x1, x2], [y1, y2], linestyle='--', color=base_color, linewidth=0.5)
 
         if x1 == x2:  # vertical
-            ax.plot([x1 + offset, x2 + offset], [y1, y2], linestyle='-', color='gray', linewidth=0.4, alpha=0.5)
-            ax.plot([x1 - offset, x2 - offset], [y1, y2], linestyle='-', color='gray', linewidth=0.4, alpha=0.5)
+            ax.plot([x1 + offset, x2 + offset], [y1, y2], linestyle='-', color=aux_color, linewidth=0.4, alpha=0.5)
+            ax.plot([x1 - offset, x2 - offset], [y1, y2], linestyle='-', color=aux_color, linewidth=0.4, alpha=0.5)
         elif y1 == y2:  # horizontal
-            ax.plot([x1, x2], [y1 + offset, y2 + offset], linestyle='-', color='gray', linewidth=0.4, alpha=0.5)
-            ax.plot([x1, x2], [y1 - offset, y2 - offset], linestyle='-', color='gray', linewidth=0.4, alpha=0.5)
+            ax.plot([x1, x2], [y1 + offset, y2 + offset], linestyle='-', color=aux_color, linewidth=0.4, alpha=0.5)
+            ax.plot([x1, x2], [y1 - offset, y2 - offset], linestyle='-', color=aux_color, linewidth=0.4, alpha=0.5)
 
     def recursive_draw(cut_list):
         for cut in cut_list:
-            draw_single_cut(cut["x1"] * scale, cut["y1"] * scale, cut["x2"] * scale, cut["y2"] * scale)
+            is_retal = cut.get("type", "").lower() == "retal"
+
+            x1 = cut["x1"] * scale
+            y1 = cut["y1"] * scale
+            x2 = cut["x2"] * scale
+            y2 = cut["y2"] * scale
+
+            draw_single_cut(x1, y1, x2, y2, is_retal=is_retal)
+
+            # Si es retal y tiene aLevel, dibuja el texto
+            if is_retal and "aLevel" in cut:
+                cx = (x1 + x2) / 2
+                cy = (y1 + y2) / 2
+                ax.text(cx, cy, str(cut["aLevel"]), fontsize=8, ha='center', va='center', color='blue', weight='bold')
+
             if "level2" in cut:
                 recursive_draw(cut["level2"])
             if "level3" in cut:
@@ -60,13 +77,26 @@ def visualize_cutting_plan(data, saw_width, plano_index=0, scale=0.3):
             for part in parts:
                 x = float(part['x']) * scale
                 y = float(part['y']) * scale
-                w = (float(part['width']) if part['rotated']  is False else float(part['length']))* scale 
-                h = (float(part['length']) if part['rotated']  is False else float(part['width'])) * scale
-                nItem = part['nItem']
-                color = color_by_nitem[nItem]
+                w = (float(part['width']) if part['rotated'] is False else float(part['length'])) * scale
+                h = (float(part['length']) if part['rotated'] is False else float(part['width'])) * scale
 
+                type_value = part.get('type', '').lower()
+                nItem = part.get('nItem', 0)
+
+                # Determinar color
+                if type_value == 'retal':
+                    color = '#d3d3d3'  # Gris claro
+                else:
+                    color = color_by_nitem.get(nItem, '#ffffff')  # Fallback blanco
+
+                # Dibujar pieza
                 ax.add_patch(patches.Rectangle((x, y), w, h, linewidth=0.5, edgecolor='black', facecolor=color))
-                ax.text(x + w / 2, y + h / 2, f"{nItem}", ha='center', va='center', fontsize=10, weight='bold')
+
+                # Texto principal centrado
+                label_text = "R" if type_value == 'retal' else f"{nItem}"
+                ax.text(x + w / 2, y + h / 2, label_text, ha='center', va='center', fontsize=10, weight='bold')
+
+                # Texto dimensiones siempre
                 ax.text(x + 2, y + 10, f"{int(h / scale)} x {int(w / scale)}", ha='left', va='top', fontsize=6)
 
             draw_cut_lines(ax, cuts, scale=scale, saw_width=saw_width_local)

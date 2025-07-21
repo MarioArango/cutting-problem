@@ -29,7 +29,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                 "x2": x2,
                 "y2": y2,
                 "aLevel": 1,
-                "comment": "cut created"
+                "type": "created"
             })
             update_icut(new_index, level1 + level2 + level3 + level4 + level5 + level6)
                 
@@ -52,7 +52,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                         "x2": x2,
                         "y2": lastCutLvl2['y2'],
                         "aLevel": 2,
-                        "comment": "cut created"
+                        "type": "created"
                     })
                 update_icut(new_index, level2 + level3 + level4 + level5 + level6)
                 
@@ -76,7 +76,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                                 "x2": lastCutLvl3['x2'],
                                 "y2": cutLvl4['y2'],
                                 "aLevel": 3,
-                                "comment": "cut created"
+                                "type": "created"
                         })
                         update_icut(new_index, level3 + level4 + level5 + level6)
 
@@ -99,7 +99,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                                 "x2": cutLvl5['x2'],
                                 "y2": lastCutLvl4['y2'],
                                 "aLevel": 4,
-                                "comment": "cut created"
+                                "type": "created"
                             })
                         update_icut(new_index, level4 + level5 + level6)
 
@@ -122,7 +122,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                                 "x2": lastCutLvl5['x2'],
                                 "y2": cutLvl6['y2'],
                                 "aLevel": 5,
-                                "comment": "cut created"
+                                "type": "created"
                             })
                         update_icut(new_index, level5 + level6)
 
@@ -150,7 +150,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                     "x2": x2,
                     "y2": y2,
                     "aLevel": 1,
-                    "comment": "cut created"
+                    "type": "created"
                 })
                 update_icut(new_index, level1 + level2 + level3 + level4 + level5 + level6)
                 
@@ -172,7 +172,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                 "x2": x2,
                 "y2": round(part['y'] + part_length + saw_width/2, 2),
                 "aLevel": 2,
-                "comment": "cut created"
+                "type": "created"
             })
             update_icut(new_index, level2 + level3 + level4 + level5 + level6)
             
@@ -196,7 +196,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                     "x2": x2,
                     "y2": round(part['y'] + part_length + saw_width/2, 2),
                     "aLevel": 2,
-                    "comment": "cut created"
+                    "type": "created"
                 })
                 update_icut(new_index, level2 + level3 + level4 + level5 + level6)
 
@@ -221,7 +221,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                         "x2": round(part['x'] + part_width + saw_width/2, 2),
                         "y2": cutLvl2['y2'],                                  
                         "aLevel": 3,
-                        "comment": "cut created"
+                        "type": "created"
                     })
                     update_icut(new_index, level3 + level4 + level5 + level6)
 
@@ -247,7 +247,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                         "x2": cutLvl3['x2'],                               
                         "y2": round(part['y'] + part_length + saw_width/2, 2), 
                         "aLevel": 4,
-                        "comment": "cut created"
+                        "type": "created"
                     })
                     update_icut(new_index, level4 + level5 + level6)
         
@@ -273,7 +273,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                         "x2": round(part['x'] + part_width + saw_width/2, 2), 
                         "y2": cutLvl4['y2'],                          
                         "aLevel": 5,
-                        "comment": "cut created"
+                        "type": "created"
                     })
                     update_icut(new_index, level5 + level6)
 
@@ -299,7 +299,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                         "x2": cutLvl5['x2'],                             
                         "y2": round(part['y'] + part_length + saw_width/2, 2),
                         "aLevel": 6,
-                        "comment": "cut created"
+                        "type": "created"
                     })
                     update_icut(new_index, level6)
 
@@ -370,4 +370,4 @@ def process_sanitation_cuts(cuts, parts, width, height, trim, saw_width):
 
     # generate_cut_sequential(level1, level2, level3, level4, level5, level6)
     
-    return level1, level2, level3, level4, level5, level6, parts
+    return level1, level2, level3, level4, level5, level6, parts, x1, x2, y1, y2

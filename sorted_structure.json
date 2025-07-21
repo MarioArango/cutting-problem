@@ -242,6 +242,51 @@
             "bEngrosado": false,
             "sEngrosado": "",
             "sChaflan": ""
+          },
+          {
+            "x": 5.0,
+            "y": 1797.6,
+            "length": 27,
+            "width": 2430,
+            "nItem": 10000,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 1813.8,
+            "y": 5.0,
+            "length": 650.0,
+            "width": 621.2,
+            "nItem": 10001,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 5.0,
+            "y": 1748.2,
+            "length": 45.0,
+            "width": 821.2,
+            "nItem": 10002,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 789.4,
+            "y": 659.4,
+            "length": 1084.4,
+            "width": 36.8,
+            "nItem": 10003,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 2035.0,
+            "y": 1468.2,
+            "length": 325.0,
+            "width": 400.0,
+            "nItem": 10004,
+            "rotated": false,
+            "type": "retal"
           }
         ],
         "wastePart": [
@@ -359,6 +404,15 @@
                 "y2": 657.2,
                 "aLevel": 2,
                 "nItem": 7
+              },
+              {
+                "x1": 2437.2,
+                "y1": 2.8,
+                "x2": 2437.2,
+                "y2": 657.2,
+                "aLevel": 2,
+                "nItem": 10001,
+                "type": "retal"
               }
             ]
           },
@@ -380,7 +434,7 @@
                 "x2": 828.4,
                 "y2": 1795.4,
                 "aLevel": 2,
-                "comment": "cut created",
+                "type": "created",
                 "nItem": 0,
                 "level3": [
                   {
@@ -421,12 +475,30 @@
                             "x2": 787.2,
                             "y2": 1746.0,
                             "aLevel": 5,
-                            "comment": "cut created",
+                            "type": "created",
                             "nItem": 5
                           }
                         ]
+                      },
+                      {
+                        "x1": 828.4,
+                        "y1": 657.2,
+                        "x2": 828.4,
+                        "y2": 1746.0,
+                        "aLevel": 4,
+                        "nItem": 10003,
+                        "type": "retal"
                       }
                     ]
+                  },
+                  {
+                    "x1": 2.8,
+                    "y1": 1795.4,
+                    "x2": 828.4,
+                    "y2": 1795.4,
+                    "aLevel": 3,
+                    "nItem": 10002,
+                    "type": "retal"
                   }
                 ]
               },
@@ -468,7 +540,7 @@
                         "x2": 2437.2,
                         "y2": 1061.6,
                         "aLevel": 4,
-                        "comment": "cut created",
+                        "type": "created",
                         "nItem": 3
                       }
                     ]
@@ -501,7 +573,7 @@
                         "x2": 2437.2,
                         "y2": 1466.0,
                         "aLevel": 4,
-                        "comment": "cut created",
+                        "type": "created",
                         "nItem": 3
                       }
                     ]
@@ -514,7 +586,7 @@
                     "x2": 2437.2,
                     "y2": 1795.4,
                     "aLevel": 3,
-                    "comment": "cut created",
+                    "type": "created",
                     "nItem": 0,
                     "level4": [
                       {
@@ -526,12 +598,30 @@
                         "y2": 1795.4,
                         "aLevel": 4,
                         "nItem": 1
+                      },
+                      {
+                        "x1": 2437.2,
+                        "y1": 1466.0,
+                        "x2": 2437.2,
+                        "y2": 1795.4,
+                        "aLevel": 4,
+                        "nItem": 10004,
+                        "type": "retal"
                       }
                     ]
                   }
                 ]
               }
             ]
+          },
+          {
+            "x1": 2.8,
+            "y1": 1827.2,
+            "x2": 2437.2,
+            "y2": 1827.2,
+            "aLevel": 1,
+            "nItem": 10000,
+            "type": "retal"
           }
         ]
       },
@@ -868,6 +958,51 @@
             "bEngrosado": false,
             "sEngrosado": "",
             "sChaflan": ""
+          },
+          {
+            "x": 5.0,
+            "y": 1797.6,
+            "length": 27,
+            "width": 2430,
+            "nItem": 10000,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 1813.8,
+            "y": 5.0,
+            "length": 650.0,
+            "width": 621.2,
+            "nItem": 10001,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 5.0,
+            "y": 1748.2,
+            "length": 45.0,
+            "width": 821.2,
+            "nItem": 10002,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 789.4,
+            "y": 659.4,
+            "length": 1084.4,
+            "width": 36.8,
+            "nItem": 10003,
+            "rotated": false,
+            "type": "retal"
+          },
+          {
+            "x": 2035.0,
+            "y": 1468.2,
+            "length": 325.0,
+            "width": 400.0,
+            "nItem": 10004,
+            "rotated": false,
+            "type": "retal"
           }
         ],
         "wastePart": [
@@ -985,6 +1120,15 @@
                 "y2": 657.2,
                 "aLevel": 2,
                 "nItem": 8
+              },
+              {
+                "x1": 2437.2,
+                "y1": 2.8,
+                "x2": 2437.2,
+                "y2": 657.2,
+                "aLevel": 2,
+                "nItem": 10001,
+                "type": "retal"
               }
             ]
           },
@@ -1006,7 +1150,7 @@
                 "x2": 828.4,
                 "y2": 1795.4,
                 "aLevel": 2,
-                "comment": "cut created",
+                "type": "created",
                 "nItem": 0,
                 "level3": [
                   {
@@ -1047,12 +1191,30 @@
                             "x2": 787.2,
                             "y2": 1746.0,
                             "aLevel": 5,
-                            "comment": "cut created",
+                            "type": "created",
                             "nItem": 6
                           }
                         ]
+                      },
+                      {
+                        "x1": 828.4,
+                        "y1": 657.2,
+                        "x2": 828.4,
+                        "y2": 1746.0,
+                        "aLevel": 4,
+                        "nItem": 10003,
+                        "type": "retal"
                       }
                     ]
+                  },
+                  {
+                    "x1": 2.8,
+                    "y1": 1795.4,
+                    "x2": 828.4,
+                    "y2": 1795.4,
+                    "aLevel": 3,
+                    "nItem": 10002,
+                    "type": "retal"
                   }
                 ]
               },
@@ -1094,7 +1256,7 @@
                         "x2": 2437.2,
                         "y2": 1061.6,
                         "aLevel": 4,
-                        "comment": "cut created",
+                        "type": "created",
                         "nItem": 4
                       }
                     ]
@@ -1127,7 +1289,7 @@
                         "x2": 2437.2,
                         "y2": 1466.0,
                         "aLevel": 4,
-                        "comment": "cut created",
+                        "type": "created",
                         "nItem": 4
                       }
                     ]
@@ -1140,7 +1302,7 @@
                     "x2": 2437.2,
                     "y2": 1795.4,
                     "aLevel": 3,
-                    "comment": "cut created",
+                    "type": "created",
                     "nItem": 0,
                     "level4": [
                       {
@@ -1152,12 +1314,30 @@
                         "y2": 1795.4,
                         "aLevel": 4,
                         "nItem": 2
+                      },
+                      {
+                        "x1": 2437.2,
+                        "y1": 1466.0,
+                        "x2": 2437.2,
+                        "y2": 1795.4,
+                        "aLevel": 4,
+                        "nItem": 10004,
+                        "type": "retal"
                       }
                     ]
                   }
                 ]
               }
             ]
+          },
+          {
+            "x1": 2.8,
+            "y1": 1827.2,
+            "x2": 2437.2,
+            "y2": 1827.2,
+            "aLevel": 1,
+            "nItem": 10000,
+            "type": "retal"
           }
         ]
       }
