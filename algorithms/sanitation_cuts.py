@@ -40,7 +40,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
         #garantiza que ingrese solo una vez, es decir cree un solo corte, porque pueden haber varios niveles 3 en el mismo nivel 2 a crear
         exist_cut_level2_created = any(cutLvl2 for cutLvl2 in level2 if cutLvl2['x2'] == x2 and cutLvl2['y2'] == cutLvl3['y2'])
         if cutLvl3['x2'] == x2 and not exist_cut_level2_created: 
-            lastCutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2["x1"] == cutLvl3["x1"] and cutLvl2['y1'] <= cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2']]
+            lastCutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2["x1"] == cutLvl3["x1"] and cutLvl2['y1'] < cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2']]
             if len(lastCutsLvl2):
                 lastCutLvl2 = lastCutsLvl2[0]
                 new_index, new_icut = get_new_index(level2, lastCutLvl2)
@@ -138,9 +138,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
         part_length = part['length'] if part['rotated'] is False else part['width']
         
         if round(part['x'] + part_width + saw_width/2, 2) == round(x2, 2):
-            print('entro')
             cutLvl1 = [ cutLvl1 for cutLvl1 in level1 if cutLvl1['y2'] == round(part['y'] + part_length + saw_width/2, 2) ]
-            print(f'cutLvl1 {cutLvl1}')
             if len(cutLvl1) == 0:
                 #Caso donde la tira esta al final del eje Y, debe crear unn corte nivel 1
                 new_index, new_icut = get_new_index(level1, level1[len(level1) - 1])
@@ -370,6 +368,6 @@ def process_sanitation_cuts(cuts, parts, width, height, trim, saw_width):
    
     add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, parts, saw_width, x1, x2, y1, y2)
 
-    generate_cut_sequential(level1, level2, level3, level4, level5, level6)
+    # generate_cut_sequential(level1, level2, level3, level4, level5, level6)
     
     return level1, level2, level3, level4, level5, level6, parts

@@ -158,12 +158,6 @@ def add_piece_by_cut(level1, level2, level3, level4, level5, level6, parts, trim
             ),
             None
         )
-        
-        if(cutLvl4['x1'] == 2424.8 and cutLvl4['y1'] == 2.8):
-            print('prev_cut_level2_father', prev_cut_level2_father)
-            print('cut_level2_father', cut_level2_father)
-            print('cut_level3_father', cut_level3_father)
-            print('prev_cut_level4', prev_cut_level4)
 
         if prev_cut_level4 is not None:
             width_strip = cutLvl4['x2'] - prev_cut_level4['x2'] - saw_width

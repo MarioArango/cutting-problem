@@ -1,9 +1,9 @@
 from functools import cmp_to_key, partial
 
 '''
-  5. ORDENAMIENTO POR NIVEL 1
-  FORMULA: Y2xf = (Y2xi - Y2(x-1)i) + Suma(Dprecedente_nuevo_orden) + SaneadoInicial, donde Htira_bruto = (Y2xi - Y2(x-1)i)
-  ALGORITMO: Trata de identificar el y2 inicial y el y2 inicial de la pieza debajo de la actual, 
+  ORDENAMIENTO POR NIVEL 2
+  FORMULA: Xxf = (Xxi - X(x-1)i) + Suma(Dprecedente_nuevo_orden) + SaneadoInicial, donde Wtira_bruto = (X2xi - X2(x-1)i)
+  ALGORITMO: Trata de identificar el x inicial y el x inicial de la pieza debajo de la actual, 
   luego una vez ordenado calcular la suma de alturas de las pizas antes de la actual
 '''
 def update_icuts(level, current_level, index = 0):

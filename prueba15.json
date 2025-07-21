@@ -28,13 +28,13 @@
         "stockCuts": "13",
         "part": [
           {
-            "stockNo": 0.0,
-            "part": 0.0,
-            "x": 5.0,
-            "y": 5.0,
-            "length": 650.0,
-            "width": 900.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "0",
+            "x": "5",
+            "y": "5",
+            "length": "650",
+            "width": "900",
+            "rotated": "False",
             "datos": "7||||||||L|",
             "nIdPza": 271197,
             "bCortado": false,
@@ -52,13 +52,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 1.0,
-            "x": 909.4,
-            "y": 5.0,
-            "length": 650.0,
-            "width": 900.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "1",
+            "x": "909.4",
+            "y": "5",
+            "length": "650",
+            "width": "900",
+            "rotated": "False",
             "datos": "7||||||||L|",
             "nIdPza": 271198,
             "bCortado": false,
@@ -76,13 +76,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 2.0,
-            "x": 830.6,
-            "y": 659.4,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "2",
+            "x": "5",
+            "y": "659.4",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "4|D|D|D|D||||L|",
             "nIdPza": 271199,
             "bCortado": false,
@@ -100,13 +100,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 3.0,
-            "x": 1635.0,
-            "y": 659.4,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "3",
+            "x": "809.4",
+            "y": "659.4",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "3||||||||L|",
             "nIdPza": 271200,
             "bCortado": false,
@@ -124,13 +124,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 4.0,
-            "x": 5.0,
-            "y": 659.4,
-            "length": 540.0,
-            "width": 780.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "4",
+            "x": "1613.8",
+            "y": "659.4",
+            "length": "540",
+            "width": "780",
+            "rotated": "False",
             "datos": "5||||||||L|",
             "nIdPza": 271201,
             "bCortado": false,
@@ -148,13 +148,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 5.0,
-            "x": 830.6,
-            "y": 1063.8,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "5",
+            "x": "5",
+            "y": "1063.8",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "3||||||||L|",
             "nIdPza": 271202,
             "bCortado": false,
@@ -172,13 +172,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 6.0,
-            "x": 1635.0,
-            "y": 1063.8,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "6",
+            "x": "809.4",
+            "y": "1063.8",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "3||||||||L|",
             "nIdPza": 271203,
             "bCortado": false,
@@ -196,13 +196,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 7.0,
-            "x": 5.0,
-            "y": 1203.8,
-            "length": 540.0,
-            "width": 780.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "7",
+            "x": "1613.8",
+            "y": "1203.8",
+            "length": "540",
+            "width": "780",
+            "rotated": "False",
             "datos": "5||||||||L|",
             "nIdPza": 271204,
             "bCortado": false,
@@ -220,13 +220,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 0.0,
-            "part": 8.0,
-            "x": 830.6,
-            "y": 1468.2,
-            "length": 325.0,
-            "width": 1200.0,
-            "rotated": false,
+            "stockNo": "0",
+            "part": "8",
+            "x": "5",
+            "y": "1468.2",
+            "length": "325",
+            "width": "1200",
+            "rotated": "False",
             "datos": "2|D|D|D|D||||L|",
             "nIdPza": 271205,
             "bCortado": false,
@@ -332,206 +332,120 @@
         "cuts": [
           {
             "stockNo": "0",
-            "iCut": 0,
-            "x1": 2.8,
-            "y1": 657.2,
-            "x2": 2437.2,
-            "y2": 657.2,
-            "aLevel": 1,
-            "nItem": 0,
-            "level2": [
-              {
-                "stockNo": "0",
-                "iCut": 0,
-                "x1": 907.2,
-                "y1": 2.8,
-                "x2": 907.2,
-                "y2": 657.2,
-                "aLevel": 2,
-                "nItem": 7
-              },
-              {
-                "stockNo": "0",
-                "iCut": 0,
-                "x1": 1811.6,
-                "y1": 2.8,
-                "x2": 1811.6,
-                "y2": 657.2,
-                "aLevel": 2,
-                "nItem": 7
-              }
-            ]
+            "iCut": "0",
+            "x1": "2.8",
+            "y1": "657.2",
+            "x2": "2437.2",
+            "y2": "657.2",
+            "aLevel": "0"
           },
           {
             "stockNo": "0",
-            "iCut": 2,
-            "x1": 2.8,
-            "y1": 1795.4,
-            "x2": 2437.2,
-            "y2": 1795.4,
-            "aLevel": 1,
-            "nItem": 0,
-            "level2": [
-              {
-                "stockNo": "",
-                "iCut": 0,
-                "x1": 828.4,
-                "y1": 657.2,
-                "x2": 828.4,
-                "y2": 1795.4,
-                "aLevel": 2,
-                "comment": "cut created",
-                "nItem": 0,
-                "level3": [
-                  {
-                    "stockNo": "0",
-                    "iCut": 1,
-                    "x1": 2.8,
-                    "y1": 1746.0,
-                    "x2": 828.4,
-                    "y2": 1746.0,
-                    "aLevel": 3,
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 2,
-                        "x1": 787.2,
-                        "y1": 657.2,
-                        "x2": 787.2,
-                        "y2": 1746.0,
-                        "aLevel": 4,
-                        "nItem": 0,
-                        "level5": [
-                          {
-                            "stockNo": "0",
-                            "iCut": 3,
-                            "x1": 2.8,
-                            "y1": 1201.6,
-                            "x2": 787.2,
-                            "y2": 1201.6,
-                            "aLevel": 5,
-                            "nItem": 5
-                          },
-                          {
-                            "stockNo": "",
-                            "iCut": 3,
-                            "x1": 2.8,
-                            "y1": 1746.0,
-                            "x2": 787.2,
-                            "y2": 1746.0,
-                            "aLevel": 5,
-                            "comment": "cut created",
-                            "nItem": 5
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "stockNo": "0",
-                "iCut": 6,
-                "x1": 2437.2,
-                "y1": 657.2,
-                "x2": 2437.2,
-                "y2": 1795.4,
-                "aLevel": 2,
-                "nItem": 0,
-                "level3": [
-                  {
-                    "stockNo": "0",
-                    "iCut": 7,
-                    "x1": 828.4,
-                    "y1": 1061.6,
-                    "x2": 2437.2,
-                    "y2": 1061.6,
-                    "aLevel": 3,
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 8,
-                        "x1": 1632.8,
-                        "y1": 657.2,
-                        "x2": 1632.8,
-                        "y2": 1061.6,
-                        "aLevel": 4,
-                        "nItem": 3
-                      },
-                      {
-                        "stockNo": "",
-                        "iCut": 8,
-                        "x1": 2437.2,
-                        "y1": 657.2,
-                        "x2": 2437.2,
-                        "y2": 1061.6,
-                        "aLevel": 4,
-                        "comment": "cut created",
-                        "nItem": 3
-                      }
-                    ]
-                  },
-                  {
-                    "stockNo": "0",
-                    "iCut": 9,
-                    "x1": 828.4,
-                    "y1": 1466.0,
-                    "x2": 2437.2,
-                    "y2": 1466.0,
-                    "aLevel": 3,
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 10,
-                        "x1": 1632.8,
-                        "y1": 1061.6,
-                        "x2": 1632.8,
-                        "y2": 1466.0,
-                        "aLevel": 4,
-                        "nItem": 3
-                      },
-                      {
-                        "stockNo": "",
-                        "iCut": 10,
-                        "x1": 2437.2,
-                        "y1": 1061.6,
-                        "x2": 2437.2,
-                        "y2": 1466.0,
-                        "aLevel": 4,
-                        "comment": "cut created",
-                        "nItem": 3
-                      }
-                    ]
-                  },
-                  {
-                    "stockNo": "",
-                    "iCut": 11,
-                    "x1": 828.4,
-                    "y1": 1795.4,
-                    "x2": 2437.2,
-                    "y2": 1795.4,
-                    "aLevel": 3,
-                    "comment": "cut created",
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 12,
-                        "x1": 2032.8,
-                        "y1": 1466.0,
-                        "x2": 2032.8,
-                        "y2": 1795.4,
-                        "aLevel": 4,
-                        "nItem": 1
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "iCut": "1",
+            "x1": "2.8",
+            "y1": "1795.4",
+            "x2": "2437.2",
+            "y2": "1795.4",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "907.2",
+            "y1": "2.8",
+            "x2": "907.2",
+            "y2": "657.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "1811.6",
+            "y1": "2.8",
+            "x2": "1811.6",
+            "y2": "657.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "4",
+            "x1": "1611.6",
+            "y1": "657.2",
+            "x2": "1611.6",
+            "y2": "1795.4",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "5",
+            "x1": "2.8",
+            "y1": "1061.6",
+            "x2": "1611.6",
+            "y2": "1061.6",
+            "aLevel": "2"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "6",
+            "x1": "2.8",
+            "y1": "1466",
+            "x2": "1611.6",
+            "y2": "1466",
+            "aLevel": "2"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "7",
+            "x1": "1611.6",
+            "y1": "1746",
+            "x2": "2437.2",
+            "y2": "1746",
+            "aLevel": "2"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "8",
+            "x1": "807.2",
+            "y1": "657.2",
+            "x2": "807.2",
+            "y2": "1061.6",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "9",
+            "x1": "2396",
+            "y1": "657.2",
+            "x2": "2396",
+            "y2": "1746",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "10",
+            "x1": "807.2",
+            "y1": "1061.6",
+            "x2": "807.2",
+            "y2": "1466",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "11",
+            "x1": "1207.2",
+            "y1": "1466",
+            "x2": "1207.2",
+            "y2": "1795.4",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "12",
+            "x1": "1611.6",
+            "y1": "1201.6",
+            "x2": "2396",
+            "y2": "1201.6",
+            "aLevel": "4"
           }
         ]
       },
@@ -546,13 +460,13 @@
         "stockCuts": "13",
         "part": [
           {
-            "stockNo": 1.0,
-            "part": 0.0,
-            "x": 5.0,
-            "y": 5.0,
-            "length": 650.0,
-            "width": 900.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "0",
+            "x": "5",
+            "y": "5",
+            "length": "650",
+            "width": "900",
+            "rotated": "False",
             "datos": "7||||||||L|",
             "nIdPza": 271206,
             "bCortado": false,
@@ -582,13 +496,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 1.0,
-            "x": 909.4,
-            "y": 5.0,
-            "length": 650.0,
-            "width": 900.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "1",
+            "x": "909.4",
+            "y": "5",
+            "length": "650",
+            "width": "900",
+            "rotated": "False",
             "datos": "7||||||||L|",
             "nIdPza": 271207,
             "bCortado": false,
@@ -618,13 +532,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 2.0,
-            "x": 830.6,
-            "y": 659.4,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "2",
+            "x": "5",
+            "y": "659.4",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "4|D|D|D|D||||L|",
             "nIdPza": 271208,
             "bCortado": false,
@@ -654,13 +568,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 3.0,
-            "x": 1635.0,
-            "y": 659.4,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "3",
+            "x": "809.4",
+            "y": "659.4",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "3||||||||L|",
             "nIdPza": 271209,
             "bCortado": false,
@@ -690,13 +604,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 4.0,
-            "x": 5.0,
-            "y": 659.4,
-            "length": 540.0,
-            "width": 780.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "4",
+            "x": "1613.8",
+            "y": "659.4",
+            "length": "540",
+            "width": "780",
+            "rotated": "False",
             "datos": "5||||||||L|",
             "nIdPza": 271210,
             "bCortado": false,
@@ -726,13 +640,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 5.0,
-            "x": 830.6,
-            "y": 1063.8,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "5",
+            "x": "5",
+            "y": "1063.8",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "3||||||||L|",
             "nIdPza": 271211,
             "bCortado": false,
@@ -762,13 +676,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 6.0,
-            "x": 1635.0,
-            "y": 1063.8,
-            "length": 400.0,
-            "width": 800.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "6",
+            "x": "809.4",
+            "y": "1063.8",
+            "length": "400",
+            "width": "800",
+            "rotated": "False",
             "datos": "3||||||||L|",
             "nIdPza": 271212,
             "bCortado": false,
@@ -798,13 +712,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 7.0,
-            "x": 5.0,
-            "y": 1203.8,
-            "length": 540.0,
-            "width": 780.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "7",
+            "x": "1613.8",
+            "y": "1203.8",
+            "length": "540",
+            "width": "780",
+            "rotated": "False",
             "datos": "5||||||||L|",
             "nIdPza": 271213,
             "bCortado": false,
@@ -834,13 +748,13 @@
             "sChaflan": ""
           },
           {
-            "stockNo": 1.0,
-            "part": 8.0,
-            "x": 830.6,
-            "y": 1468.2,
-            "length": 325.0,
-            "width": 1200.0,
-            "rotated": false,
+            "stockNo": "1",
+            "part": "8",
+            "x": "5",
+            "y": "1468.2",
+            "length": "325",
+            "width": "1200",
+            "rotated": "False",
             "datos": "2|D|D|D|D||||L|",
             "nIdPza": 271214,
             "bCortado": false,
@@ -958,206 +872,120 @@
         "cuts": [
           {
             "stockNo": "0",
-            "iCut": 0,
-            "x1": 2.8,
-            "y1": 657.2,
-            "x2": 2437.2,
-            "y2": 657.2,
-            "aLevel": 1,
-            "nItem": 0,
-            "level2": [
-              {
-                "stockNo": "0",
-                "iCut": 0,
-                "x1": 907.2,
-                "y1": 2.8,
-                "x2": 907.2,
-                "y2": 657.2,
-                "aLevel": 2,
-                "nItem": 8
-              },
-              {
-                "stockNo": "0",
-                "iCut": 0,
-                "x1": 1811.6,
-                "y1": 2.8,
-                "x2": 1811.6,
-                "y2": 657.2,
-                "aLevel": 2,
-                "nItem": 8
-              }
-            ]
+            "iCut": "0",
+            "x1": "2.8",
+            "y1": "657.2",
+            "x2": "2437.2",
+            "y2": "657.2",
+            "aLevel": "0"
           },
           {
             "stockNo": "0",
-            "iCut": 2,
-            "x1": 2.8,
-            "y1": 1795.4,
-            "x2": 2437.2,
-            "y2": 1795.4,
-            "aLevel": 1,
-            "nItem": 0,
-            "level2": [
-              {
-                "stockNo": "",
-                "iCut": 0,
-                "x1": 828.4,
-                "y1": 657.2,
-                "x2": 828.4,
-                "y2": 1795.4,
-                "aLevel": 2,
-                "comment": "cut created",
-                "nItem": 0,
-                "level3": [
-                  {
-                    "stockNo": "0",
-                    "iCut": 1,
-                    "x1": 2.8,
-                    "y1": 1746.0,
-                    "x2": 828.4,
-                    "y2": 1746.0,
-                    "aLevel": 3,
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 2,
-                        "x1": 787.2,
-                        "y1": 657.2,
-                        "x2": 787.2,
-                        "y2": 1746.0,
-                        "aLevel": 4,
-                        "nItem": 0,
-                        "level5": [
-                          {
-                            "stockNo": "0",
-                            "iCut": 3,
-                            "x1": 2.8,
-                            "y1": 1201.6,
-                            "x2": 787.2,
-                            "y2": 1201.6,
-                            "aLevel": 5,
-                            "nItem": 6
-                          },
-                          {
-                            "stockNo": "",
-                            "iCut": 3,
-                            "x1": 2.8,
-                            "y1": 1746.0,
-                            "x2": 787.2,
-                            "y2": 1746.0,
-                            "aLevel": 5,
-                            "comment": "cut created",
-                            "nItem": 6
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "stockNo": "0",
-                "iCut": 6,
-                "x1": 2437.2,
-                "y1": 657.2,
-                "x2": 2437.2,
-                "y2": 1795.4,
-                "aLevel": 2,
-                "nItem": 0,
-                "level3": [
-                  {
-                    "stockNo": "0",
-                    "iCut": 7,
-                    "x1": 828.4,
-                    "y1": 1061.6,
-                    "x2": 2437.2,
-                    "y2": 1061.6,
-                    "aLevel": 3,
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 8,
-                        "x1": 1632.8,
-                        "y1": 657.2,
-                        "x2": 1632.8,
-                        "y2": 1061.6,
-                        "aLevel": 4,
-                        "nItem": 4
-                      },
-                      {
-                        "stockNo": "",
-                        "iCut": 8,
-                        "x1": 2437.2,
-                        "y1": 657.2,
-                        "x2": 2437.2,
-                        "y2": 1061.6,
-                        "aLevel": 4,
-                        "comment": "cut created",
-                        "nItem": 4
-                      }
-                    ]
-                  },
-                  {
-                    "stockNo": "0",
-                    "iCut": 9,
-                    "x1": 828.4,
-                    "y1": 1466.0,
-                    "x2": 2437.2,
-                    "y2": 1466.0,
-                    "aLevel": 3,
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 10,
-                        "x1": 1632.8,
-                        "y1": 1061.6,
-                        "x2": 1632.8,
-                        "y2": 1466.0,
-                        "aLevel": 4,
-                        "nItem": 4
-                      },
-                      {
-                        "stockNo": "",
-                        "iCut": 10,
-                        "x1": 2437.2,
-                        "y1": 1061.6,
-                        "x2": 2437.2,
-                        "y2": 1466.0,
-                        "aLevel": 4,
-                        "comment": "cut created",
-                        "nItem": 4
-                      }
-                    ]
-                  },
-                  {
-                    "stockNo": "",
-                    "iCut": 11,
-                    "x1": 828.4,
-                    "y1": 1795.4,
-                    "x2": 2437.2,
-                    "y2": 1795.4,
-                    "aLevel": 3,
-                    "comment": "cut created",
-                    "nItem": 0,
-                    "level4": [
-                      {
-                        "stockNo": "0",
-                        "iCut": 12,
-                        "x1": 2032.8,
-                        "y1": 1466.0,
-                        "x2": 2032.8,
-                        "y2": 1795.4,
-                        "aLevel": 4,
-                        "nItem": 2
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "iCut": "1",
+            "x1": "2.8",
+            "y1": "1795.4",
+            "x2": "2437.2",
+            "y2": "1795.4",
+            "aLevel": "0"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "2",
+            "x1": "907.2",
+            "y1": "2.8",
+            "x2": "907.2",
+            "y2": "657.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "3",
+            "x1": "1811.6",
+            "y1": "2.8",
+            "x2": "1811.6",
+            "y2": "657.2",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "4",
+            "x1": "1611.6",
+            "y1": "657.2",
+            "x2": "1611.6",
+            "y2": "1795.4",
+            "aLevel": "1"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "5",
+            "x1": "2.8",
+            "y1": "1061.6",
+            "x2": "1611.6",
+            "y2": "1061.6",
+            "aLevel": "2"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "6",
+            "x1": "2.8",
+            "y1": "1466",
+            "x2": "1611.6",
+            "y2": "1466",
+            "aLevel": "2"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "7",
+            "x1": "1611.6",
+            "y1": "1746",
+            "x2": "2437.2",
+            "y2": "1746",
+            "aLevel": "2"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "8",
+            "x1": "807.2",
+            "y1": "657.2",
+            "x2": "807.2",
+            "y2": "1061.6",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "9",
+            "x1": "2396",
+            "y1": "657.2",
+            "x2": "2396",
+            "y2": "1746",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "10",
+            "x1": "807.2",
+            "y1": "1061.6",
+            "x2": "807.2",
+            "y2": "1466",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "11",
+            "x1": "1207.2",
+            "y1": "1466",
+            "x2": "1207.2",
+            "y2": "1795.4",
+            "aLevel": "3"
+          },
+          {
+            "stockNo": "0",
+            "iCut": "12",
+            "x1": "1611.6",
+            "y1": "1201.6",
+            "x2": "2396",
+            "y2": "1201.6",
+            "aLevel": "4"
           }
         ]
       }

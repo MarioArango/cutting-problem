@@ -1,8 +1,8 @@
 '''
-  5. ORDENAMIENTO POR NIVEL 1
-  FORMULA: Y2xf = (Y2xi - Y2(x-1)i) + Suma(Dprecedente_nuevo_orden) + SaneadoInicial, donde Htira_bruto = (Y2xi - Y2(x-1)i)
-  ALGORITMO: Trata de identificar el y2 inicial y el y2 inicial de la pieza debajo de la actual, 
-  luego una vez ordenado calcular la suma de alturas de las pizas antes de la actual
+    5. ORDENAMIENTO POR NIVEL 1
+    FORMULA: Y2xf = (Y2xi - Y2(x-1)i) + Suma(Dprecedente_nuevo_orden) + SaneadoInicial, donde Htira_bruto = (Y2xi - Y2(x-1)i)
+    ALGORITMO: Trata de identificar el y2 inicial y el y2 inicial de la pieza debajo de la actual, 
+    luego una vez ordenado calcular la suma de alturas de las pizas antes de la actual
 '''
 def update_icuts(level, current_level = 1, index = 0):
     """
@@ -74,22 +74,17 @@ def update_nested_coordinates_recursive(cut_dict, cut_dict_nivel1, parts, accumu
                 
                 cut['y1'] = new_y1
                 cut['y2'] = new_y2
-                
+                    
                 if cut['nItem'] != 0:
-                  part = next((part for part in parts
-                               if part['nItem'] == cut['nItem']
-                               and (round(part['y'] + (part['length'] if part['rotated'] is False else part['width']) + saw_width/2, 2) 
-                                    if level_key == 'level3' or level_key == 'level5' 
-                                    else round(part['x'] + (part['width'] if part['rotated'] is False else part['length']) + saw_width/2, 2)) 
-                               == round(old_y2 if level_key == 'level3' or level_key == 'level5' else cut['x2'], 2)
-                               and (round(part['x'] + (part['width'] if part['rotated'] is False else part['length']) + saw_width/2, 2) 
-                                    if level_key == 'level3' or level_key == 'level5' 
-                                    else round(part['y'] + (part['length'] if part['rotated'] is False else part['width']) + saw_width/2, 2)) 
-                               == round(cut['x2'] if level_key == 'level3' or level_key == 'level5' else old_y2, 2)
-                              ), None)
-                  if part:
-                    part_height = part['length'] if part['rotated'] is False else part['width']
-                    part['y'] = round(new_y2 - part_height - saw_width/2, 2)
+                    for part in parts:
+                        part_width = part['width'] if part['rotated'] is False else part['length']
+                        part_length = part['length'] if part['rotated'] is False else part['width']
+                        
+                        part_x2 = round(part['x'] + part_width + saw_width/2, 2)
+                        part_y2 = round(part['y'] + part_length + saw_width/2, 2)
+                        
+                        if part['nItem'] == cut['nItem'] and part_x2 == round(cut['x2'], 2) and part_y2 == round(old_y2, 2):
+                            part['y'] = round(new_y2 - part_length - saw_width/2, 2)
 
                 # Recursión para niveles más profundos
                 update_nested_coordinates_recursive(cut, cut_dict_nivel1, parts, accumulated_heights, trim, saw_width)  

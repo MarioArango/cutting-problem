@@ -38,7 +38,9 @@ def generate_cuts_ordered(result_optimization, trim, saw_width):
             # print(sorted_structure_level1)
             # 5. Ordenar y recalcular coordenadas en nivel 2
             sorted_structure_level2, parts = sort_level2_by_strip_width(sorted_structure_level1, parts, trim, saw_width, 'asc')
+            # print(sorted_structure_level2)
             
+            #falta actualizar la secuencia de corte
             healthy_boards.append({
                 **board,
                 'cuts': sorted_structure_level2,
@@ -67,8 +69,14 @@ if __name__ == "__main__":
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba6.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba7.json')
-    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8.json')
-    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8.json') #falta
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba10.json') #falta
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba11.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba12.json') #falta
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba13.json') #falta
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba14.json') #falta
+    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba15.json')
     
     with open(result_optimization_path, 'r') as json_file:
         result_optimization = json.load(json_file)

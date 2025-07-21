@@ -53,7 +53,7 @@ def visualize_cutting_plan(data, saw_width, plano_index=0, scale=0.3):
             ax.set_xlim(0, width)
             ax.set_ylim(height, 0)
             ax.set_aspect('equal')
-            ax.set_title(f"Plano {plano_index + 1} - Material: {plano['material']}", fontsize=10)
+            ax.set_title(f"Plano {plano_index + 1} - Material: {plano['material']}", fontsize=10, pad=15)
 
             ax.add_patch(patches.Rectangle((0, 0), width, height, fill=False, edgecolor='black', linewidth=1))
 
