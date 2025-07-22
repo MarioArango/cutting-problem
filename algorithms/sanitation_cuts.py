@@ -303,71 +303,12 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
                     })
                     update_icut(new_index, level6)
 
-def generate_cut_sequential(level1, level2, level3, level4, level5, level6):
-    '''
-        AGREGANDO iCut a los cortes creados, combinando todos los niveles y asignar iCut secuencial
-    '''
-    all_cuts = level1 + level2 + level3 + level4 + level5 + level6
-    for i, cut in enumerate(all_cuts):
-        cut['iCut'] = i
-
-def process_sanitation_cuts(cuts, parts, width, height, trim, saw_width):
+def process_sanitation_cuts(level1, level2, level3, level4, level5, level6, parts, saw_width, x1, x2, y1, y2):
     """
     Procesa los datos de corte y sanea los cortes faltantes
-
-    Args:
-        cuts: Json de diccionario con datos del tablero
-        saw_width: Ancho de la sierra
-        trim: Margen de recorte
-        width: Ancho del tablero
-        height: Alto del tablero
-    
-    Returns:
-        list: Lista de todos los cortes (level1 + level2 + level3 + level4 + level6 + level6)
     """
-    x1 = round(trim - saw_width/2, 2)
-    x2 = round(width - trim + saw_width/2, 2)
-    y1 = round(trim - saw_width/2, 2)
-    y2 = round(height - trim + saw_width/2, 2)
-    
-    parts = [ {
-        **part,
-        "stockNo": float(part["stockNo"]),
-        "part": float(part["part"]),
-        "x": float(part["x"]),
-        "y": float(part["y"]),
-        "length": float(part["length"]),
-        "width": float(part["width"]),
-        "rotated": False if part["rotated"] == 'False' else True
-        } for part in parts
-    ]
-    
-    cuts = [ {
-        "stockNo": cut["stockNo"],
-        "iCut": int(cut["iCut"]),
-        "x1": float(cut["x1"]),
-        "y1": float(cut["y1"]),
-        "x2": float(cut["x2"]),
-        "y2": float(cut["y2"]),
-        "aLevel": int(cut["aLevel"]) + 1
-        } for cut in cuts
-    ]
-
-    # print(cuts)
-
-    level1 = [ cut for cut in cuts if cut['aLevel'] == 1 ]
-    level2 = [ cut for cut in cuts if cut['aLevel'] == 2 ]
-    level3 = [ cut for cut in cuts if cut['aLevel'] == 3 ]
-    level4 = [ cut for cut in cuts if cut['aLevel'] == 4 ]
-    level5 = [ cut for cut in cuts if cut['aLevel'] == 5 ]
-    level6 = [ cut for cut in cuts if cut['aLevel'] == 6 ]
-
-    # print({'level1': level1, 'level2': level2, 'level3': level3, 'level4': level4, 'level5': level5, 'level6': level6})
-    
     add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level6, x1, x2, y1, y2)
    
     add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, parts, saw_width, x1, x2, y1, y2)
-
-    # generate_cut_sequential(level1, level2, level3, level4, level5, level6)
     
-    return level1, level2, level3, level4, level5, level6, parts, x1, x2, y1, y2
+    return level1, level2, level3, level4, level5, level6, parts
