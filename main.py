@@ -31,7 +31,7 @@ def generate_cuts_ordered(result_optimization, trim, saw_width):
 
             # 4. Crear estructura anidada
             nested_structure = build_nested_structure(level1, level2, level3, level4, level5, level6)
-            
+
             # 5. Ordenar y recalcular coordenadas en nivel 1
             # sorted_structure_level1, parts = sort_level1_by_strip_height(nested_structure, parts, trim, saw_width, 'asc')
             # print(sorted_structure_level1)
@@ -63,14 +63,32 @@ if __name__ == "__main__":
     
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order1.json') #N:2288 - id:2659
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order2.json') #N:2277 - id:2648
-    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba1.json')
+    
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba1.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba1_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba2.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba2_vertical.json')
+    
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba3.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba3_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba4.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba4_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba6.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba6_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba7.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba7_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8.json')
+    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8_vertical.json')
+    
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba10.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba11.json')

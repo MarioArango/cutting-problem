@@ -1,15 +1,12 @@
 def clean_optimization(board, trim, saw_width):
     
-    width = float(board['sheetW'])
-    height = float(board['sheetH'])
+    orientation = 'h'
     cuts = board['cuts']
     parts = board['part']
-            
-    x1 = round(trim - saw_width/2, 2)
-    x2 = round(width - trim + saw_width/2, 2)
-    y1 = round(trim - saw_width/2, 2)
-    y2 = round(height - trim + saw_width/2, 2)
+    width_initial = board['sheetW']
+    height_initial = board['sheetH']
     
+    # Convert string values to appropriate types
     parts = [ {
         **part,
         "stockNo": float(part["stockNo"]),
@@ -32,6 +29,42 @@ def clean_optimization(board, trim, saw_width):
         "aLevel": int(cut["aLevel"]) + 1
         } for cut in cuts
     ]
+    
+    #Verificar si el primer corte es horizontal o vertical
+    cutsTrims = board['cutsTrims']    
+    if float(board['sheetH']) == float(cutsTrims[0]['y2']):
+        orientation = 'v';
+         
+    if orientation == 'h':        
+        x1 = round(trim - saw_width/2, 2)
+        x2 = round(float(board['sheetW']) - trim + saw_width/2, 2)
+        y1 = round(trim - saw_width/2, 2)
+        y2 = round(float(board['sheetH']) - trim + saw_width/2, 2)
+    else:
+        x1 = round(trim - saw_width/2, 2)
+        x2 = round(float(board['sheetH']) - trim + saw_width/2, 2)
+        y1 = round(trim - saw_width/2, 2)
+        y2 = round(float(board['sheetW']) - trim + saw_width/2, 2)
+        
+        cuts = [{
+            **cut,
+            'x1': cut['y1'],
+            'y1': cut['x1'],
+            'x2': cut['y2'],
+            'y2': cut['x2'],
+        } for cut in cuts]
+    
+        parts = [{
+            **part,
+            'x': part['y'],
+            'y': part['x'],
+            'length': part['width'],
+            'width': part['length'],
+        } for part in parts]
+        
+        board['sheetH'] = width_initial
+        board['sheetW'] = height_initial
+
     
     level1 = [ cut for cut in cuts if cut['aLevel'] == 1 ]
     level2 = [ cut for cut in cuts if cut['aLevel'] == 2 ]
