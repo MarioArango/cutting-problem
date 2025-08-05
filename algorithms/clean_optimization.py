@@ -15,7 +15,8 @@ def clean_optimization(board, trim, saw_width):
         "y": float(part["y"]),
         "length": float(part["length"]),
         "width": float(part["width"]),
-        "rotated": False if part["rotated"] == 'False' else True
+        "rotated": False if part["rotated"] == 'False' else True,
+        'nItem': int(part.get('nItem', part['datos'].split('|')[0])),
         } for part in parts
     ]
     

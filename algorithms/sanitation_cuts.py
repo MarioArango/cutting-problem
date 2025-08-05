@@ -38,7 +38,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
             ##puede haber un caso donde un lvl2 previo no exista y se deba saber el lvl1 actual para tener el y2, es poco probable porque el optimizador lo consideraria lvl1
     for cutLvl3 in level3:
         #garantiza que ingrese solo una vez, es decir cree un solo corte, porque pueden haber varios niveles 3 en el mismo nivel 2 a crear
-        exist_cut_level2_created = any(cutLvl2 for cutLvl2 in level2 if cutLvl2['x2'] == x2 and cutLvl2['y2'] == cutLvl3['y2'])
+        exist_cut_level2_created = any(cutLvl2 for cutLvl2 in level2 if cutLvl2['x2'] == x2 and cutLvl2['x2'] == cutLvl3['x2'] and cutLvl2['y1'] < cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2'] )
         if cutLvl3['x2'] == x2 and not exist_cut_level2_created: 
             lastCutsLvl2 = [cutLvl2 for cutLvl2 in level2 if cutLvl2["x1"] == cutLvl3["x1"] and cutLvl2['y1'] < cutLvl3['y2'] and cutLvl2['y2'] >= cutLvl3['y2']]
             if len(lastCutsLvl2):
@@ -83,7 +83,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
     # LEVEL 4 CREADO, CASO DONDE EL NIVEL 4 ESTA EN EXTREMO DEL ANCHO, CONINCIDIENTO CON EL NIVEL 2 PREVIO,  Y HAY NIVELES INTERNOS LEVEL 5
             ##puede haber un caso donde un lvl4 previo no exista y se deba saber el lvl2 previo para tener el y1, es poco probable porque el optimizador lo consideraria lvl3
     for cutLvl5 in level5:
-        exist_cut_level5_created = any(cutLvl4 for cutLvl4 in level4 if cutLvl4['x2'] == cutLvl5['x2'] and cutLvl4['y2'] == cutLvl5['y2'])
+        exist_cut_level5_created = any(cutLvl4 for cutLvl4 in level4 if cutLvl4['x2'] == cutLvl5['x2'] and cutLvl4['y1'] < cutLvl5['y2'] and cutLvl4['y2'] >= cutLvl5['y2'])
         if not exist_cut_level5_created:
             for cutLvl2 in level2:
                 if cutLvl5['x2'] == cutLvl2["x2"]: 
