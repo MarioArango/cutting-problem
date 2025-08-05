@@ -1,4 +1,4 @@
-from algorithms import clean_optimization, process_sanitation_cuts, add_piece_by_cut, build_nested_structure, destroy_nested_build, rearrange_pieces, sort_level1_by_strip_height, sort_level2_by_strip_width, add_retal_cut_pieces
+from algorithms import clean_optimization, process_sanitation_cuts, add_piece_by_cut, build_nested_structure, rearrange_pieces, sort_level1_by_strip_height, sort_level2_by_strip_width, add_retal_cut_pieces
 from visualization import visualize_cutting_plan
 import json
 import os
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order1.json') #N:2288 - id:2659
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'data_order2.json') #N:2277 - id:2648
     
-    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba1.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba1.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba1_vertical.json')
     
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba2.json')
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8_vertical.json')
     
-    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
+    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba10.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba11.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba12.json')
@@ -121,9 +121,9 @@ if __name__ == "__main__":
     with open(result_optimization_path, 'r') as json_file:
         result_optimization = json.load(json_file)
         
-        # healthy_material = generate_cuts_ordered(result_optimization, trim, saw_width)
+        healthy_material = generate_cuts_ordered(result_optimization, trim, saw_width)
         
-        healthy_material = generate_rearrange_pieces(result_optimization, trim, saw_width)
+        # healthy_material = generate_rearrange_pieces(result_optimization, trim, saw_width)
         
         visualize_cutting_plan(healthy_material, saw_width)
 
