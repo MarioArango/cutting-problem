@@ -96,7 +96,7 @@ if __name__ == "__main__":
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba4_vertical.json')
     
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5.json')
-    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5_vertical.json')
+    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba5_vertical.json')
     
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba6.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba6_vertical.json')
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba8_vertical.json')
     
-    result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
+    # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba9.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba10.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba11.json')
     # result_optimization_path = os.path.join(os.path.dirname(__file__), 'prueba12.json')

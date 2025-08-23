@@ -19,8 +19,8 @@ def add_retal_cut_pieces(sorted_structure, parts, saw_width, x1, x2, y1, y2):
         part_retal = {
             "x": round(last_cut_level1["x1"] + saw_width/2, 2),
             "y": round(last_cut_level1["y1"] + saw_width/2, 2),
-            "length": round(y2 - last_cut_level1["y1"] - saw_width),
-            "width": round(x2 - last_cut_level1["x1"] - saw_width),
+            "length": round(y2 - last_cut_level1["y1"] - saw_width, 2),
+            "width": round(x2 - last_cut_level1["x1"] - saw_width, 2),
             "nItem": index,
             "rotated": False,
             "type": 'retal'

@@ -25,7 +25,7 @@ def add_missing_cuts_from_internal(level1, level2, level3, level4, level5, level
                 "stockNo": "",
                 "iCut": new_icut,
                 "x1": x1,
-                "y1": y1,
+                "y1": y2,
                 "x2": x2,
                 "y2": y2,
                 "aLevel": 1,
@@ -160,7 +160,7 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
             if len(cutLvl1_father_upper) == 1:
                 cutLvl1_upper = cutLvl1_father_upper[0]
                 cutsLvl2_upper = [cutLvl2 for cutLvl2 in level2 if cutLvl2['y2'] == cutLvl1_upper['y2']]
-                cutsLvl2_upper = sorted(cutsLvl2_upper, key=lambda cutLvl2: cutLvl2['x2'], reversed=True)
+                cutsLvl2_upper = sorted(cutsLvl2_upper, key=lambda cutLvl2: cutLvl2['x2'], reverse=True)
                 lastCutsLvl2 = cutsLvl2_upper[0]
             
             new_index, new_icut = 0, 1 if lastCutsLvl2 is None else get_new_index(level2, lastCutsLvl2)
@@ -283,10 +283,10 @@ def add_missing_cuts_from_parts(level1, level2, level3, level4, level5, level6, 
         part_length = part['length'] if part['rotated'] is False else part['width']
         for cutLvl5 in level5:
             #garantiza que el corte que genera la pieza no es nivel 4, sino que es nivel 5 y falta crear
-            exist_cutLvl6_prev = any(cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['x2'], 2) == round(part['y'] + part_length + saw_width/2 , 2))
+            exist_cutLvl6_prev = any(cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['y2'], 2) == round(part['y'] + part_length + saw_width/2 , 2))
             
             if round(part['x'] + part_width + saw_width/2, 2) == round(cutLvl5['x2'], 2) and exist_cutLvl6_prev:
-                lastCutsLvl6 = [cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['x2'], 2) == round(part['y'] + part_length + saw_width/2 , 2)]
+                lastCutsLvl6 = [cutLvl6 for cutLvl6 in level6 if cutLvl6['y2'] == cutLvl5['y2'] and cutLvl6['x2'] > cutLvl5['x1'] and cutLvl6['x2'] < cutLvl5['x2'] and round(cutLvl5['y2'], 2) == round(part['y'] + part_length + saw_width/2 , 2)]
                 lastCutsLvl6 = sorted(lastCutsLvl6, key=lambda cut: cut['x2'], reverse=True)
                 
                 if len(lastCutsLvl6):
